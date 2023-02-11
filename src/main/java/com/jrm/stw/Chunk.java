@@ -1,24 +1,48 @@
 package com.jrm.stw;
 
+import com.jrm.stw.Block.BlockType;
+
 public class Chunk{
-    public int x;
-    public int y;
-    public double value;
-    public int order;
+    public final int WIDTH = 32;
+    public final int LENGTH = 32;
+    public final int HEIGHT = 100;
+
+    private Block[][][] blocks;
 
     public Chunk(){
-        x = -1;
-        y = -1;
-        value = 'z';
-    }
-    public Chunk(int x,int y, double value, int order){
-        this.x = x;
-        this.y = y;
-        this.value = value;
-        this.order = order;
-    }
-    public void setType(int value){
-        this.value = value;
+        blocks = new Block[WIDTH][LENGTH][HEIGHT];
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < LENGTH; y++) {
+                for (int z = 0; z < HEIGHT; z++) {
+                    blocks[x][y][z] = new Block(x, y, z, BlockType.Air, this);
+                }
+            }
+        }
     }
 
+    public Chunk(int x, int y) {
+        this();
+        this.x = x;
+        this.y = y;
+    }
+
+    public void createLogicalBlockDistribution() {
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < LENGTH; y++) {
+                for (int z = 0; z < HEIGHT; z++) {
+                    if (z < 20) {
+                        blocks[x][y][z] = new Block(x, y, z, BlockType.Sand, this);
+                    } else if (z < 40) {
+                        blocks[x][y][z] = new Block(x, y, z, BlockType.Dirt, this);
+                    } else if (z < 60) {
+                        blocks[x][y][z] = new Block(x, y, z, BlockType.Stone, this);
+                    } else if (z < 70) {
+                        blocks[x][y][z] = new Block(x, y, z, BlockType.Water, this);
+                    } else {
+                        blocks[x][y][z] = new Block(x, y, z, BlockType.Air, this);
+                    }
+                }
+            }
+        }
+    }
 }

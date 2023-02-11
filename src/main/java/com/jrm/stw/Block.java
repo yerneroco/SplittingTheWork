@@ -1,18 +1,22 @@
 package com.jrm.stw;
 
 public class Block {
-    private int x;
-    private int y;
-    private int z;
-    private BlockType type;
-    private Chunk chunk;
+    public int x;
+    public int y;
+    public int z;
+    public Chunk chunk;
+    public BlockType type;
 
-    public Block(int x, int y, int z, BlockType type, Chunk chunk) {
+    public enum BlockType {
+        SAND, DIRT, AIR, STONE, GRASS, WATER
+    }
+
+    public Block(int x, int y, int z, Chunk chunk) {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.type = type;
         this.chunk = chunk;
+        this.type = BlockType.AIR;
     }
 
     public int getX() {

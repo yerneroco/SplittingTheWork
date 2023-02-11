@@ -160,57 +160,57 @@ public class Map{
             e.printStackTrace();
         }
     }
-    public void writeChunkArrayToJsonFile(String fileName) {
-        JSONArray chunkArray = new JSONArray();
-        for (Chunk[] chunkRow : chunks) {
-            JSONArray rowArray = new JSONArray();
-            for (Chunk chunk : chunkRow) {
-                JSONObject chunkObject = new JSONObject();
-                chunkObject.put("x", chunk.x);
-                chunkObject.put("y", chunk.y);
-                chunkObject.put("value", chunk.value);
-                chunkObject.put("order", chunk.order);
-                rowArray.add(chunkObject);
-            }
-            chunkArray.add(rowArray);
-        }
-
-        try (FileWriter file = new FileWriter(fileName)) {
-            file.write(chunkArray.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static Chunk[][] readChunkArrayFromJsonFile(String fileName) {
-        Chunk[][] chunks = null;
-        try (FileReader reader = new FileReader(fileName)) {
-            JSONParser parser = new JSONParser();
-            JSONArray jsonArray = (JSONArray) parser.parse(reader);
-
-            chunks = new Chunk[jsonArray.size()][];
-            for (int i = 0; i < jsonArray.size(); i++) {
-                JSONArray innerArray = (JSONArray) jsonArray.get(i);
-                chunks[i] = new Chunk[innerArray.size()];
-                for (int j = 0; j < innerArray.size(); j++) {
-                    JSONObject jsonObject = (JSONObject) innerArray.get(j);
-                    int x = ((Long) jsonObject.get("x")).intValue();
-                    int y = ((Long) jsonObject.get("y")).intValue();
-                    double value = (Double) jsonObject.get("value");
-                    int order = ((Long) jsonObject.get("order")).intValue();
-                    chunks[i][j] = new Chunk(x, y, value, order);
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return chunks;
-    }
-
+//    public void writeChunkArrayToJsonFile(String fileName) {
+//        JSONArray chunkArray = new JSONArray();
+//        for (Chunk[] chunkRow : chunks) {
+//            JSONArray rowArray = new JSONArray();
+//            for (Chunk chunk : chunkRow) {
+//                JSONObject chunkObject = new JSONObject();
+//                chunkObject.put("x", chunk.x);
+//                chunkObject.put("y", chunk.y);
+//                chunkObject.put("value", chunk.value);
+//                chunkObject.put("order", chunk.order);
+//                rowArray.add(chunkObject);
+//            }
+//            chunkArray.add(rowArray);
+//        }
+//
+//        try (FileWriter file = new FileWriter(fileName)) {
+//            file.write(chunkArray.toJSONString());
+//            file.flush();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    public static Chunk[][] readChunkArrayFromJsonFile(String fileName) {
+//        Chunk[][] chunks = null;
+//        try (FileReader reader = new FileReader(fileName)) {
+//            JSONParser parser = new JSONParser();
+//            JSONArray jsonArray = (JSONArray) parser.parse(reader);
+//
+//            chunks = new Chunk[jsonArray.size()][];
+//            for (int i = 0; i < jsonArray.size(); i++) {
+//                JSONArray innerArray = (JSONArray) jsonArray.get(i);
+//                chunks[i] = new Chunk[innerArray.size()];
+//                for (int j = 0; j < innerArray.size(); j++) {
+//                    JSONObject jsonObject = (JSONObject) innerArray.get(j);
+//                    int x = ((Long) jsonObject.get("x")).intValue();
+//                    int y = ((Long) jsonObject.get("y")).intValue();
+//                    double value = (Double) jsonObject.get("value");
+//                    int order = ((Long) jsonObject.get("order")).intValue();
+//                    chunks[i][j] = new Chunk(x, y, value, order);
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        return chunks;
+//    }
+//
 
     public String toString(){
         String map = "";
