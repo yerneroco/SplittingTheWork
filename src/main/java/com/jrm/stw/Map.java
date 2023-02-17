@@ -11,7 +11,8 @@ public class Map {
     private int height;
     private double[][] temperatures;
     private double[][] rainFall;
-    private int[][] land;
+    private double[][] biomes;
+    private int[][] landMass;
     private Chunk[][] chunks;
     private int seed;
 
@@ -46,6 +47,7 @@ public class Map {
     }
 
     public Chunk[][] getMap() {
+
         return chunks;
     }
 
