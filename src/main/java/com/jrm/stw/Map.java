@@ -8,34 +8,34 @@ import java.util.Random;
 
 public class Map {
     private int width;
-    private int height;
+    private int length;
     private double[][] temperatures;
     private double[][] rainFall;
     private double[][] biomes;
     private int[][] landMass;
     private Chunk[][] chunks;
-    private int seed;
+    private long seed;
 
     public Map() {
         width = 10;
-        height = 10;
+        length = 10;
         //chunks = generateMap(0);
-        chunks = new Chunk[width][height];
+        chunks = new Chunk[width][length];
 
         seed = 12345;
     }
 
     public Map(int zero, int one) {
         width = 5;
-        height = 5;
-        chunks = new Chunk[width][height];
+        length = 5;
+        chunks = new Chunk[width][length];
         //chunks = generateMap(seed,zero,one);
         seed = 12345;
     }
 
-    public Map(int width, int height, Chunk[][] chunks, int seed) {
+    public Map(int width, int length, Chunk[][] chunks, long seed) {
         this.width = width;
-        this.height = height;
+        this.length = length;
         this.chunks = chunks;
         this.seed = seed;
     }
@@ -43,7 +43,7 @@ public class Map {
     public Map(Chunk[][] chunks) {
         this.chunks = chunks;
         width = chunks.length;
-        height = chunks[0].length;
+        length = chunks[0].length;
     }
 
     public Chunk[][] getMap() {
@@ -53,39 +53,86 @@ public class Map {
 
     public void fillChunksWithAir() {
         for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
+            for (int j = 0; j < length; j++) {
                 chunks[i][j] = new Chunk();
             }
         }
     }
+
     public void fillChunksRandom() {
         for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
+            for (int j = 0; j < length; j++) {
                 chunks[i][j] = new Chunk();
                 chunks[i][j].createLogicalBlockDistribution();
             }
         }
     }
 
-    public int[][] generateLand(int seed) {
+    public int[][] generateLandRandom(long seed) {
         Random random = new Random(seed);
-        int[][] land = new int[width][height];
+        int[][] land = new int[width][length];
         for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
+            for (int j = 0; j < length; j++) {
                 land[i][j] = random.nextInt(2); // generates 0 or 1
             }
         }
         return land;
     }
 
+    public int[][] generateLandMass(long seed) {
+        Random rand = new Random(seed);
+        int[][] landMass = new int[width][length];
+        landMass = generateLandRandom(seed);
+        landMass = zoom(landMass);
+        landMass = addIsland(landMass);
+        landMass = zoom(landMass);
+        landMass = addIsland(landMass);
+        landMass = addIsland(landMass);
+        landMass = addIsland(landMass);
+        landMass = removeTooMuchOcean(landMass);
+        landMass = addIsland(landMass);
+        landMass = zoom(landMass);
+        landMass = zoom(landMass);
+        landMass = addIsland(landMass);
+
+        return landMass;
+
+    }
+
+    private int[][] removeTooMuchOcean(int[][] landMass) {
+
+        return landMass;
+    }
+
+    private int[][] addIsland(int[][] landMass) {
+
+        return landMass;
+    }
+
+    private int[][] zoom(int[][] landMass) {
+        int newWidth = landMass.length * 2;
+        int newLength = landMass[0].length * 2;
+        int[][] newLandMass = new int[newWidth][newLength];
+        for(int r = 0; r < length; r++){
+            for(int c = 0; c < width; c++){
+                newLandMass[2*c][2*r] = landMass[c][r];
+                newLandMass[(2*c)+1][2*r] = landMass[c][r];
+                newLandMass[2*c][(2*r)+1] = landMass[c][r];
+                newLandMass[(2*c)+1][(2*r)+1] = landMass[c][r];
+
+            }
+        }
+        return newLandMass;
+    }
+
     /*
     public Chunk[][] generateMap(){
         //A is 65
         int order = 1;
-        Chunk[][] map = new Chunk[width][height];
+        Chunk[][] map = new Chunk[width][length];
         Random rand = new Random(seed);
         System.out.println(rand.nextDouble());
-        for(int r = 0; r < height; r++){
+        for(int r = 0; r < length; r++){
             for(int c = 0; c < width; c++){
 
                 double value = (Math.abs(rand.nextInt()) % 2);
@@ -95,14 +142,16 @@ public class Map {
         }
         return map;
     }
+    */
+
     /*
-    public Chunk[][] generateMap(int seed, int zero, int one){
+    public Chunk[][] generateMap(long seed, int zero, int one){
         //A is 65
         int order = 1;
-        Chunk[][] map = new Chunk[width][height];
+        Chunk[][] map = new Chunk[width][length];
         Random rand = new Random(seed);
         //System.out.println(rand.nextDouble());
-        for(int r = 0; r < height; r++){
+        for(int r = 0; r < length; r++){
             for(int c = 0; c < width; c++){
 
                 double value = ( ((int)(rand.nextDouble()*10))/10.0);
@@ -113,14 +162,14 @@ public class Map {
             }
         }
         return map;
-    }
-
+    }*/
+/*
     public Map zoom(){
         //starting zoom is pixels = 4096 final blocks or 2^12 so 12 zooms
         int newWidth = width *2;
-        int newHeight = height *2;
-        Chunk[][] newChunks = new Chunk[newWidth][newHeight];
-        for(int r = 0; r < height; r++){
+        int newlength = length *2;
+        Chunk[][] newChunks = new Chunk[newWidth][newlength];
+        for(int r = 0; r < length; r++){
             for(int c = 0; c < width; c++){
                 newChunks[2*c][2*r] = chunks[c][r];
                 newChunks[(2*c)+1][2*r] = chunks[c][r];
@@ -129,25 +178,27 @@ public class Map {
 
             }
         }
-        return new Map(newWidth,newHeight,newChunks);
+        return new Map(newWidth,newlength,newChunks);
 //       width = newWidth;
-//       height = newWidth;
+//       length = newWidth;
 //       chunks = newChunks;
 //
 //       return this;
     }
+    */
 
+    /*
     public Map addIsland(){
-        Chunk[][] newChunks = new Chunk[width][height];
+        Chunk[][] newChunks = new Chunk[width][length];
         Random rand = new Random(seed);
         int order = 0;
-        for(int r = 0; r < height; r++){
+        for(int r = 0; r < length; r++){
             for(int c = 0; c < width; c++){
                 int count = 0;
                 if(chunks[c][r].value < 0.25){
                     //make sure square is not an edge
                     if(c != 0 && r != 0){
-                        if(c != width-1 && r != height-1){
+                        if(c != width-1 && r != length-1){
                             for(int i = -1; i <= 1; i++){
                                 for(int j = -1; j <=1; j++){
                                     if(chunks[c+j][r+i].value == 0){
@@ -175,7 +226,7 @@ public class Map {
                 order++;
             }
         }
-        return new Map(width,height, newChunks);
+        return new Map(width,length, newChunks);
     }*/
     public static void writeJsonToFile(Chunk chunk, String fileName) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -193,8 +244,8 @@ public class Map {
 
     public String toString() {
         String map = "";
-        for (int r = 0; r < height; r++) {
-            for (int c = 0; c < width; c++) {
+        for (int r = 0; r < width; r++) {
+            for (int c = 0; c < length; c++) {
                 map += chunks[c][r] + " ";
             }
             map += "\n";
