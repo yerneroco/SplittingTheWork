@@ -1,40 +1,42 @@
 package com.jrm.stw;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 public class Map{
     private int width;
     private int height;
+    private double[][] temperatures;
+    private double[][] rainFall;
+    private int[][] land;
     private Chunk[][] chunks;
     private int seed;
     public Map(){
-        width = 30;
-        height = 30;
-        chunks = generateMap(0);
+        width = 10;
+        height = 10;
+        //chunks = generateMap(0);
+        chunks = new Chunk[width][height];
+
         seed = 12345;
     }
     public Map(int zero, int one){
         width = 5;
         height = 5;
-        chunks = generateMap(seed,zero,one);
+        chunks = new Chunk[width][height];
+        //chunks = generateMap(seed,zero,one);
         seed  = 12345;
     }
-    public Map(int width,int height,Chunk[][] chunks){
+    public Map(int width,int height,Chunk[][] chunks, int seed){
         this.width = width;
         this.height = height;
         this.chunks = chunks;
+        this.seed = seed;
     }
     public Map(Chunk[][] chunks){
         this.chunks = chunks;
@@ -45,7 +47,26 @@ public class Map{
         return chunks;
     }
 
-    public Chunk[][] generateMap(int seed){
+    public void fillChunksWithAir(){
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                chunks[i][j] = new Chunk();
+            }
+        }
+    }
+
+    public int[][] generateLand(int seed) {
+        Random random = new Random(seed);
+        int[][] land = new int[width][height];
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                land[i][j] = random.nextInt(2); // generates 0 or 1
+            }
+        }
+        return land;
+    }
+    /*
+    public Chunk[][] generateMap(){
         //A is 65
         int order = 1;
         Chunk[][] map = new Chunk[width][height];
@@ -61,6 +82,7 @@ public class Map{
         }
         return map;
     }
+    /*
     public Chunk[][] generateMap(int seed, int zero, int one){
         //A is 65
         int order = 1;
@@ -141,82 +163,28 @@ public class Map{
             }
         }
         return new Map(width,height, newChunks);
-    }
-    public static void writeChunkArrayToJsonFile(Chunk[][] chunkArray, String fileName) {
-        JSONArray jsonArray = new JSONArray();
-        for (Chunk[] chunks : chunkArray) {
-            JSONArray innerJsonArray = new JSONArray();
-            for (Chunk chunk : chunks) {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("element", chunk);
-                innerJsonArray.add(jsonObject);
-            }
-            jsonArray.add(innerJsonArray);
+    }*/
+    public static void writeJsonToFile(Chunk chunk, String fileName) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(chunk);
+
+        File directory = new File("chunks");
+        if (!directory.exists()) {
+            directory.mkdir();
         }
-        try (FileWriter file = new FileWriter(fileName)) {
-            file.write(jsonArray.toJSONString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        File file = new File(directory, fileName);
+        objectMapper.writeValue(file, json);
     }
-//    public void writeChunkArrayToJsonFile(String fileName) {
-//        JSONArray chunkArray = new JSONArray();
-//        for (Chunk[] chunkRow : chunks) {
-//            JSONArray rowArray = new JSONArray();
-//            for (Chunk chunk : chunkRow) {
-//                JSONObject chunkObject = new JSONObject();
-//                chunkObject.put("x", chunk.x);
-//                chunkObject.put("y", chunk.y);
-//                chunkObject.put("value", chunk.value);
-//                chunkObject.put("order", chunk.order);
-//                rowArray.add(chunkObject);
-//            }
-//            chunkArray.add(rowArray);
-//        }
-//
-//        try (FileWriter file = new FileWriter(fileName)) {
-//            file.write(chunkArray.toJSONString());
-//            file.flush();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public static Chunk[][] readChunkArrayFromJsonFile(String fileName) {
-//        Chunk[][] chunks = null;
-//        try (FileReader reader = new FileReader(fileName)) {
-//            JSONParser parser = new JSONParser();
-//            JSONArray jsonArray = (JSONArray) parser.parse(reader);
-//
-//            chunks = new Chunk[jsonArray.size()][];
-//            for (int i = 0; i < jsonArray.size(); i++) {
-//                JSONArray innerArray = (JSONArray) jsonArray.get(i);
-//                chunks[i] = new Chunk[innerArray.size()];
-//                for (int j = 0; j < innerArray.size(); j++) {
-//                    JSONObject jsonObject = (JSONObject) innerArray.get(j);
-//                    int x = ((Long) jsonObject.get("x")).intValue();
-//                    int y = ((Long) jsonObject.get("y")).intValue();
-//                    double value = (Double) jsonObject.get("value");
-//                    int order = ((Long) jsonObject.get("order")).intValue();
-//                    chunks[i][j] = new Chunk(x, y, value, order);
-//                }
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//        return chunks;
-//    }
-//
+
+
+
 
     public String toString(){
         String map = "";
         for(int r = 0; r < height; r++){
             for(int c = 0; c < width; c++){
-                map += chunks[c][r].value + " ";
+                map += chunks[c][r] + " ";
             }
             map += "\n";
         }
