@@ -4,12 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Random;
 
 public class Map {

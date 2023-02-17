@@ -2,7 +2,9 @@ package com.jrm.stw;
 
 import com.jrm.stw.Block.BlockType;
 
-public class Chunk {
+import java.io.Serializable;
+
+public class Chunk implements Serializable {
     public final int WIDTH = 32;
     public final int LENGTH = 32;
     public final int HEIGHT = 100;
