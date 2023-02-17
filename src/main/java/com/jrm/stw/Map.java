@@ -56,6 +56,14 @@ public class Map {
             }
         }
     }
+    public void fillChunksRandom() {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                chunks[i][j] = new Chunk();
+                chunks[i][j].createLogicalBlockDistribution();
+            }
+        }
+    }
 
     public int[][] generateLand(int seed) {
         Random random = new Random(seed);
