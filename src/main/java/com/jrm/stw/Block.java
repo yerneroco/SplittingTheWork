@@ -3,14 +3,15 @@ package com.jrm.stw;
 import java.io.Serializable;
 
 public class Block implements Serializable {
-    private int x,y,z;
+    private int x, y, z;
     private int chunkX, chunkY;
     private BlockType type;
 
     public enum BlockType {
         SAND, DIRT, AIR, STONE, GRASS, WATER
     }
-    public Block(){
+
+    public Block() {
         x = 0;
         y = 0;
         z = 0;
@@ -19,7 +20,8 @@ public class Block implements Serializable {
         type = BlockType.AIR;
 
     }
-    public Block(int x, int y, int z, int chunkX,int chunkY,BlockType type) {
+
+    public Block(int x, int y, int z, int chunkX, int chunkY, BlockType type) {
         this.x = x;
         this.y = y;
         this.z = z;

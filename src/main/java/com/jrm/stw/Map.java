@@ -1,15 +1,18 @@
 package com.jrm.stw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 import java.io.IOException;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
-public class Map{
+
+public class Map {
     private int width;
     private int height;
     private double[][] temperatures;
@@ -17,7 +20,8 @@ public class Map{
     private int[][] land;
     private Chunk[][] chunks;
     private int seed;
-    public Map(){
+
+    public Map() {
         width = 10;
         height = 10;
         //chunks = generateMap(0);
@@ -25,29 +29,33 @@ public class Map{
 
         seed = 12345;
     }
-    public Map(int zero, int one){
+
+    public Map(int zero, int one) {
         width = 5;
         height = 5;
         chunks = new Chunk[width][height];
         //chunks = generateMap(seed,zero,one);
-        seed  = 12345;
+        seed = 12345;
     }
-    public Map(int width,int height,Chunk[][] chunks, int seed){
+
+    public Map(int width, int height, Chunk[][] chunks, int seed) {
         this.width = width;
         this.height = height;
         this.chunks = chunks;
         this.seed = seed;
     }
-    public Map(Chunk[][] chunks){
+
+    public Map(Chunk[][] chunks) {
         this.chunks = chunks;
         width = chunks.length;
         height = chunks[0].length;
     }
-    public Chunk[][] getMap(){
+
+    public Chunk[][] getMap() {
         return chunks;
     }
 
-    public void fillChunksWithAir(){
+    public void fillChunksWithAir() {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 chunks[i][j] = new Chunk();
@@ -65,6 +73,7 @@ public class Map{
         }
         return land;
     }
+
     /*
     public Chunk[][] generateMap(){
         //A is 65
@@ -178,12 +187,10 @@ public class Map{
     }
 
 
-
-
-    public String toString(){
+    public String toString() {
         String map = "";
-        for(int r = 0; r < height; r++){
-            for(int c = 0; c < width; c++){
+        for (int r = 0; r < height; r++) {
+            for (int c = 0; c < width; c++) {
                 map += chunks[c][r] + " ";
             }
             map += "\n";

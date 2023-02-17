@@ -1,19 +1,21 @@
 package com.jrm.stw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 import java.io.IOException;
+
 public class Main {
-    public static void main(String arg[]){
-       Map test= new Map();
-       test.fillChunksWithAir();
+    public static void main(String arg[]) {
+        Map test = new Map();
+        test.fillChunksWithAir();
         Chunk[][] chunks = test.getMap();
         String fileName;
 
         try {
             for (int i = 0; i < chunks.length; i++) {
                 for (int j = 0; j < chunks[0].length; j++) {
-                    fileName = "chunk" + i +"_" + j + ".json";
+                    fileName = "chunk" + i + "_" + j + ".json";
                     Map.writeJsonToFile(chunks[i][j], fileName);
                 }
             }
