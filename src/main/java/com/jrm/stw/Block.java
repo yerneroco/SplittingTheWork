@@ -2,16 +2,18 @@ package com.jrm.stw;
 
 import java.io.Serializable;
 
+
 public class Block implements Serializable {
     private int x, y, z;
     private int chunkX, chunkZ;
     private int universalX, universalY, universalZ;
     private BlockType type;
 
-    public enum BlockType {
-        SAND, DIRT, AIR, STONE, GRASS, WATER
-    }
-
+    /**
+     * A Block with x,y,z location of 0,0,0 relative to the parent Chunk.
+     * The parent Chunk is chunk at 0,0 in the Map.
+     * The type is Air.
+     */
     public Block() {
         universalX = 0;
         universalY = 0;
@@ -25,28 +27,41 @@ public class Block implements Serializable {
 
     }
 
+    /**
+     * A Block with a given x,y,z location relative to the parent Chunk.
+     * The parent Chunk is tracked using the Chunk's x and y location in the global map.
+     * The type is given at creation.
+     * @param x x location relative to Chunk
+     * @param y y location relative to Chunk
+     * @param z z location relative to Chunk
+     * @param chunkX x location of Chunk relative to Map
+     * @param chunkZ y location of Chunk relative to Map
+     * @param type type of Block
+     */
     public Block(int x, int y, int z, int chunkX, int chunkZ, BlockType type) {
-
-        if (x > 0 && y > 0 && z > 0 && chunkX > 0 && chunkZ > 0) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.chunkX = chunkX;
-            this.chunkZ = chunkZ;
-            calculateUniversalLocation();
-        } else {
-            System.out.println("Invalid Block Location at Constructor: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
-        }
-
-        this.type = type;
+        setX(x);
+        setY(y);
+        setZ(z);
+        setChunkX(chunkX);
+        setChunkZ(chunkZ);
+        calculateUniversalLocation();
+        setType(type);
     }
 
+    /**
+     * x is the Block's index in the parent's Chunk Array
+     * @return the x location of this block in its chunk
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * x is the Block's index in the parent's chunk Array
+     * @param x must be greater than zero and less than Chunk.WIDTH.
+     */
     public void setX(int x) {
-        if (x > 0) {
+        if (x >= 0 && x < Chunk.WIDTH) {
             this.x = x;
             calculateUniversalLocation();
         } else {
@@ -54,27 +69,42 @@ public class Block implements Serializable {
         }
     }
 
+    /**
+     * y is the Block's index in the parent's Chunk Array
+     * @return the y location of this block in its chunk
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * y is the Block's index in the parent's chunk Array
+     * @param y must be greater than zero and less than Chunk.HEIGHT.
+     */
     public void setY(int y) {
-        if (y > 0) {
+        if (y >= 0 && y < Chunk.HEIGHT) {
             this.y = y;
-            calculateUniversalLocation();
+            this.universalY = y;
         } else {
             System.out.println("Invalid Y Block Location at: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
         }
     }
 
+    /**
+     * z is the Block's index in the parent's Chunk Array
+     * @return the z location of this block in its chunk
+     */
     public int getZ() {
         return z;
     }
-
+    /**
+     * z is the Block's index in the parent's chunk Array
+     * @param z must be greater than zero and less than Chunk.LENGTH.
+     */
     public void setZ(int z) {
-        if (z > 0) {
+        if (z >= 0 && z < Chunk.LENGTH) {
             this.z = z;
-            this.universalZ = z;
+            calculateUniversalLocation();
         } else {
             System.out.println("Invalid Z Block Location at: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
         }

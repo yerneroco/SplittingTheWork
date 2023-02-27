@@ -1,6 +1,5 @@
 package com.jrm.stw;
 
-import com.jrm.stw.Block.BlockType;
 
 import java.io.Serializable;
 

@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/BlockType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
@@ -20,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -44,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
   }
 }]]></component>
   <component name="RunManager">
