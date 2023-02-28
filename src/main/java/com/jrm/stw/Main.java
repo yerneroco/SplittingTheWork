@@ -7,6 +7,7 @@ public class Main {
         Map test = new Map();
         test.fillChunksRandom();
         Chunk[][] chunks = test.getMap();
+        test.generateLandMass();
         String fileName;
 
         try {

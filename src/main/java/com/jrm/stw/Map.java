@@ -79,10 +79,16 @@ public class Map {
         return land;
     }
 
-    public int[][] generateLandMass(long seed) {
+
+    /**
+     * creates a landmass map
+     * @return 2d array of whether or not a chunk is ocean or land
+     */
+    public int[][] generateLandMass() {
         Random rand = new Random(seed);
         int[][] landMass = new int[width][length];
         landMass = generateLandRandom(seed);
+        print(landMass);
         landMass = zoom(landMass);
         landMass = addIsland(landMass);
         landMass = zoom(landMass);
@@ -98,6 +104,17 @@ public class Map {
         return landMass;
 
     }
+    private void print(int[][] arr){
+        String out = "";
+        for(int r = 0; r < length; r++){
+            for(int c = 0; c < width; c++){
+                out += arr[c][r] + " ";
+            }
+            out += "\n";
+        }
+        System.out.println(out);
+
+    }
 
     private int[][] removeTooMuchOcean(int[][] landMass) {
 
@@ -105,7 +122,46 @@ public class Map {
     }
 
     private int[][] addIsland(int[][] landMass) {
+        int[][] newChunks = new int[width][length];
+        Random rand = new Random(seed);
 
+        int order = 0;
+        for(int r = 0; r < length; r++){
+            for(int c = 0; c < width; c++){
+                int count = 0;
+
+                if(landMass[c][r] == 0){
+                    //make sure square is not an edge
+                    if(c != 0 && r != 0){
+                        if(c != width-1 && r != length-1){
+                            for(int i = -1; i <= 1; i++){
+                                for(int j = -1; j <=1; j++){
+                                    if(landMass[c+j][r+i] == 0){
+                                        count++;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //Change chances of an island forming
+                    if(count > 7){
+                        if(rand.nextInt() % 2 == 0){
+                            newChunks[c][r] = new Chunk(c,r, 0, order);
+                        }else{
+                            newChunks[c][r] = new Chunk(c,r, 1, order);
+                        }
+                    }else{
+                        newChunks[c][r] = new Chunk(c,r, 0, order);
+                    }
+
+                }else{
+                    newChunks[c][r] = new Chunk(c,r,1,order);
+                }
+                order++;
+            }
+        }
+        //return new Map(width,length, newChunks);
         return landMass;
     }
 
