@@ -2,7 +2,9 @@ package com.jrm.stw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
@@ -11,7 +13,7 @@ public class Map {
     private int length;
     private double[][] temperatures;
     private double[][] rainFall;
-    private double[][] biomes;
+    private Biome[][] biomes;
     private int[][] landMass;
     private Chunk[][] chunks;
     private long seed;
@@ -76,7 +78,13 @@ public class Map {
         int[][] land = new int[width][length];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < length; j++) {
-                land[i][j] = random.nextInt(2); // generates 0 or 1
+                int rand = random.nextInt(10);
+                //1 in 10 chance of being land
+                if(rand >= 1){
+                    land[i][j] = 0;
+                }else{
+                    land[i][j] = 1;
+                }
             }
         }
         //return the populated array
@@ -140,7 +148,7 @@ public class Map {
         zoom();
         zoom();
         addIsland();
-
+        printLandToFile();
     }
 
     private static void print(int[][] arr) {
@@ -166,6 +174,87 @@ public class Map {
         System.out.println(out);
 
     }
+    private void printLandToFile() {
+        try {
+            // create a new directory called "landmass"
+            File directory = new File("landMass");
+            if (!directory.exists()) {
+                directory.mkdir();
+            }
+
+            // create a new file called "landMass.txt" in the "landmass" directory
+            File file = new File(directory, "landMass.txt");
+            FileWriter fw = new FileWriter(file);
+
+            // write the contents of the landMass array to the file
+            for (int r = 0; r < length; r++) {
+                for (int c = 0; c < width; c++) {
+                    fw.write(landMass[c][r] + " ");
+                }
+                fw.write("\n");
+            }
+
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+    }
+
+    private void printLandToFile(String fileName) {
+        try {
+            // create a new directory called "landmass"
+            File directory = new File("landMass");
+            if (!directory.exists()) {
+                directory.mkdir();
+            }
+
+            // create a new file called "landMass.txt" in the "landmass" directory
+            File file = new File(directory, fileName);
+            FileWriter fw = new FileWriter(file);
+
+            // write the contents of the landMass array to the file
+            for (int r = 0; r < length; r++) {
+                for (int c = 0; c < width; c++) {
+                    fw.write(landMass[c][r] + " ");
+                }
+                fw.write("\n");
+            }
+
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+    }
+    private void printLandToFile(int[][] land, String fileName) {
+        try {
+            // create a new directory called "landmass"
+            File directory = new File("landMass");
+            if (!directory.exists()) {
+                directory.mkdir();
+            }
+
+            // create a new file called "landMass.txt" in the "landmass" directory
+            File file = new File(directory, fileName);
+            FileWriter fw = new FileWriter(file);
+
+            // write the contents of the landMass array to the file
+            for (int r = 0; r < land.length; r++) {
+                for (int c = 0; c < land[0].length; c++) {
+                    fw.write(land[c][r] + " ");
+                }
+                fw.write("\n");
+            }
+
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+    }
+
+
 
     private void removeTooMuchOcean() {
         landMass = landMass;
@@ -307,12 +396,12 @@ public class Map {
             }
         }
         //create new array 2x the size of old one
-        int newWidth = width * 2;
-        int newLength = length * 2;
-        landMass = new int[newWidth][newLength];
+        width = width * 2;
+        length = length * 2;
+        landMass = new int[width][length];
         //set every 4 tiles equal to one from the old array
-        for (int r = 0; r < length; r++) {
-            for (int c = 0; c < width; c++) {
+        for (int r = 0; r < length/2; r++) {
+            for (int c = 0; c < width/2; c++) {
                 landMass[2 * c][2 * r] = land[c][r];
                 landMass[(2 * c) + 1][2 * r] = land[c][r];
                 landMass[2 * c][(2 * r) + 1] = land[c][r];
