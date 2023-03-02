@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String arg[]) {
         Map test = new Map();
-        test.fillChunksRandom();
+        //test.fillChunksRandom();
         Chunk[][] chunks = test.getMap();
         test.generateLandMass();
         String fileName;

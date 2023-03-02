@@ -44,7 +44,7 @@ public class Chunk implements Serializable {
     public Chunk(int x, int z) {
         this.x = x;
         this.z = z;
-        this.biome =
+        this.biome = Biome.Void;
     }
     public Chunk(int x, int z,Biome biome) {
         this.x = x;
@@ -87,7 +87,7 @@ public class Chunk implements Serializable {
                 throw new IllegalStateException("Unexpected value: " + biome);
         }
     }
-    
+
     private void createTundra() {
     }
     private void createTaiga() {
