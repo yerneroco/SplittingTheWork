@@ -134,6 +134,18 @@ public class Chunk implements Serializable {
             }
         }
     }
+    public void addOreVein(){
+    /*
+    solid chunk of dirt
+    ore veins
+        random spot start
+        random walk away from start
+    */
+    }
+    public static Block[][][] addOreVein(Block[][][] blks){
+        Block[][][] newBlocks = new Block[WIDTH][LENGTH][HEIGHT];
+        return newBlocks;
+    }
 
 
     public Block[][][] getBlocks() {
