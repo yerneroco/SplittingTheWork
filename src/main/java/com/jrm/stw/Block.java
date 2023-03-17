@@ -23,6 +23,7 @@ public class Block implements Serializable {
         z = 0;
         chunkX = 0;
         chunkZ = 0;
+        calculateUniversalLocation();
         type = BlockType.AIR;
 
     }
@@ -65,7 +66,7 @@ public class Block implements Serializable {
             this.x = x;
             calculateUniversalLocation();
         } else {
-            System.out.println("Invalid X Block Location at: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
+            System.out.println("Invalid X Block Location at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
         }
     }
 
@@ -86,7 +87,7 @@ public class Block implements Serializable {
             this.y = y;
             this.universalY = y;
         } else {
-            System.out.println("Invalid Y Block Location at: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
+            System.out.println("Invalid Y Block Location at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
         }
     }
 
@@ -106,7 +107,7 @@ public class Block implements Serializable {
             this.z = z;
             calculateUniversalLocation();
         } else {
-            System.out.println("Invalid Z Block Location at: " + x + "," + y + "," + z + " " + chunkX + "," + chunkZ);
+            System.out.println("Invalid Z Block Location at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
         }
     }
 
@@ -119,7 +120,7 @@ public class Block implements Serializable {
             this.chunkX = chunkX;
             calculateUniversalLocation();
         } else {
-            System.out.println("Invalid X Chunk Location at: " + x + "," + y + "," + z + " " + this.chunkX + "," + chunkZ);
+            System.out.println("Invalid X Chunk Location at: " + x + "," + y + "," + z + " Chunk: " + chunkX + "," + chunkZ);
         }
     }
 
@@ -132,7 +133,7 @@ public class Block implements Serializable {
             this.chunkZ = chunkZ;
             calculateUniversalLocation();
         } else {
-            System.out.println("Invalid Z Chunk Location at: " + x + "," + y + "," + z + " " + chunkX + "," + this.chunkZ);
+            System.out.println("Invalid Z Chunk Location at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
         }
     }
 
@@ -145,27 +146,27 @@ public class Block implements Serializable {
     }
 
     public void calculateUniversalLocation() {
-        universalX = x + (32 * Chunk.WIDTH);
+        universalX = x + (Chunk.WIDTH * chunkX);
         universalY = y;
-        universalZ = z + (32 * Chunk.HEIGHT);
+        universalZ = z + (Chunk.LENGTH * chunkZ);
     }
 
     public int getUniversalX() {
-        if (universalX < 0) {
+        if (universalX < 0 || universalX >32) {
             calculateUniversalLocation();
         }
         return universalX;
     }
 
     public int getUniversalY() {
-        if (universalY < 0) {
+        if (universalY < 0 || universalY  > 100) {
             calculateUniversalLocation();
         }
         return universalY;
     }
 
     public int getUniversalZ() {
-        if (universalZ < 0) {
+        if (universalZ < 0 || universalZ >32) {
             calculateUniversalLocation();
         }
         return universalZ;
