@@ -32,12 +32,13 @@ public class Block implements Serializable {
      * A Block with a given x,y,z location relative to the parent Chunk.
      * The parent Chunk is tracked using the Chunk's x and y location in the global map.
      * The type is given at creation.
-     * @param x x location relative to Chunk
-     * @param y y location relative to Chunk
-     * @param z z location relative to Chunk
+     *
+     * @param x      x location relative to Chunk
+     * @param y      y location relative to Chunk
+     * @param z      z location relative to Chunk
      * @param chunkX x location of Chunk relative to Map
      * @param chunkZ y location of Chunk relative to Map
-     * @param type type of Block
+     * @param type   type of Block
      */
     public Block(int x, int y, int z, int chunkX, int chunkZ, BlockType type) {
         setX(x);
@@ -51,6 +52,7 @@ public class Block implements Serializable {
 
     /**
      * x is the Block's index in the parent's Chunk Array
+     *
      * @return the x location of this block in its chunk
      */
     public int getX() {
@@ -59,6 +61,7 @@ public class Block implements Serializable {
 
     /**
      * x is the Block's index in the parent's chunk Array
+     *
      * @param x must be greater than zero and less than Chunk.WIDTH.
      */
     public void setX(int x) {
@@ -72,6 +75,7 @@ public class Block implements Serializable {
 
     /**
      * y is the Block's index in the parent's Chunk Array
+     *
      * @return the y location of this block in its chunk
      */
     public int getY() {
@@ -80,6 +84,7 @@ public class Block implements Serializable {
 
     /**
      * y is the Block's index in the parent's chunk Array
+     *
      * @param y must be greater than zero and less than Chunk.HEIGHT.
      */
     public void setY(int y) {
@@ -93,13 +98,16 @@ public class Block implements Serializable {
 
     /**
      * z is the Block's index in the parent's Chunk Array
+     *
      * @return the z location of this block in its chunk
      */
     public int getZ() {
         return z;
     }
+
     /**
      * z is the Block's index in the parent's chunk Array
+     *
      * @param z must be greater than zero and less than Chunk.LENGTH.
      */
     public void setZ(int z) {
@@ -145,35 +153,31 @@ public class Block implements Serializable {
         this.type = type;
     }
 
-    public void calculateUniversalLocation() {
+    private void calculateUniversalLocation() {
         universalX = x + (Chunk.WIDTH * chunkX);
         universalY = y;
         universalZ = z + (Chunk.LENGTH * chunkZ);
     }
 
     public int getUniversalX() {
-        if (universalX < 0 || universalX >32) {
+        if (universalX < 0 || universalX > 32) {
             calculateUniversalLocation();
         }
         return universalX;
     }
 
     public int getUniversalY() {
-        if (universalY < 0 || universalY  > 100) {
+        if (universalY < 0 || universalY > 100) {
             calculateUniversalLocation();
         }
         return universalY;
     }
 
     public int getUniversalZ() {
-        if (universalZ < 0 || universalZ >32) {
+        if (universalZ < 0 || universalZ > 32) {
             calculateUniversalLocation();
         }
         return universalZ;
     }
 
-
-    public void destroy() {
-
-    }
 }
