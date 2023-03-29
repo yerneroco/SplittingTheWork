@@ -8,7 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TimeBoxing.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TimeBoxing.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/BlockType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/BlockType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jrm/stw/BlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jrm/stw/BlockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jrm/stw/ChunkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jrm/stw/ChunkTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,7 @@
       <recent name="com.jrm.stw" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BlockTest">
+  <component name="RunManager" selected="JUnit.ChunkTest">
     <configuration name="BlockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
@@ -94,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlockTest.getType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChunkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
         <pattern>
@@ -103,14 +106,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.jrm.stw" />
-      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.BlockTest" />
-      <option name="METHOD_NAME" value="getType" />
+      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChunkTest.createLogicalBlockDistribution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SplittingTheWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jrm.stw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jrm.stw" />
+      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
+      <option name="METHOD_NAME" value="createLogicalBlockDistribution" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlockTest.setChunkZ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChunkTest.getBlocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
         <pattern>
@@ -119,24 +138,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.jrm.stw" />
-      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.BlockTest" />
-      <option name="METHOD_NAME" value="setChunkZ" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BlockTest.setType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SplittingTheWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jrm.stw.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jrm.stw" />
-      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.BlockTest" />
-      <option name="METHOD_NAME" value="setType" />
+      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
+      <option name="METHOD_NAME" value="getBlocks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChunkTest" />
+        <item itemvalue="JUnit.ChunkTest.createLogicalBlockDistribution" />
+        <item itemvalue="JUnit.ChunkTest.getBlocks" />
         <item itemvalue="JUnit.BlockTest" />
         <item itemvalue="JUnit.BlockTest.calculateUniversalLocation" />
-        <item itemvalue="JUnit.BlockTest.setType" />
-        <item itemvalue="JUnit.BlockTest.getType" />
-        <item itemvalue="JUnit.BlockTest.setChunkZ" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +202,13 @@
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_calculateUniversalLocation.ic" NAME="BlockTest.calculateUniversalLocation Coverage Results" MODIFIED="1679365832383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest.ic" NAME="ChunkTest Coverage Results" MODIFIED="1680054079556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setType.ic" NAME="BlockTest.setType Coverage Results" MODIFIED="1679363445660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_createLogicalBlockDistribution.ic" NAME="ChunkTest.createLogicalBlockDistribution Coverage Results" MODIFIED="1680053959396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalZ.ic" NAME="BlockTest.getUniversalZ Coverage Results" MODIFIED="1679359357463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -208,7 +217,7 @@
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setZ.ic" NAME="BlockTest.setZ Coverage Results" MODIFIED="1679359621764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1679365850422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1680011653524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setY.ic" NAME="BlockTest.setY Coverage Results" MODIFIED="1679360065025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -230,6 +239,9 @@
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setChunkX.ic" NAME="BlockTest.setChunkX Coverage Results" MODIFIED="1679362918343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_getBlocks.ic" NAME="ChunkTest.getBlocks Coverage Results" MODIFIED="1680053940832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getX.ic" NAME="BlockTest.getX Coverage Results" MODIFIED="1679359176701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

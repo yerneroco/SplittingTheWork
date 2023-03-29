@@ -147,6 +147,8 @@ public class BlockTest {
         //negative value
         tester.setChunkX(-1);
         assertEquals(10, tester.getChunkX());
+        tester.setChunkX(0);
+        assertEquals(0, tester.getChunkX());
         //assertEquals(tester.getUniversalX(), 10);
         //Too high value
         //tester.setChunkX(32);
@@ -166,6 +168,8 @@ public class BlockTest {
         //negative value
         tester.setChunkZ(-1);
         assertEquals(10, tester.getChunkZ());
+        tester.setChunkZ(0);
+        assertEquals(0, tester.getChunkZ());
         //assertEquals(tester.getUniversalZ(), 10);
         //Too high value
         //tester.setChunkZ(32);

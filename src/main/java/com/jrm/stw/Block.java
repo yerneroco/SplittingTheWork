@@ -115,7 +115,7 @@ public class Block implements Serializable {
             this.z = z;
             calculateUniversalLocation();
         } else {
-            System.out.println("Invalid Z Block Location at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
+            System.out.println("Invalid Z Block Location " + z +" at: " + x + "," + y + "," + z + " Chunk:" + chunkX + "," + chunkZ);
         }
     }
 
@@ -124,7 +124,7 @@ public class Block implements Serializable {
     }
 
     public void setChunkX(int chunkX) {
-        if (chunkX > 0) {
+        if (chunkX >= 0) {
             this.chunkX = chunkX;
             calculateUniversalLocation();
         } else {
@@ -137,7 +137,7 @@ public class Block implements Serializable {
     }
 
     public void setChunkZ(int chunkZ) {
-        if (chunkZ > 0) {
+        if (chunkZ >= 0) {
             this.chunkZ = chunkZ;
             calculateUniversalLocation();
         } else {

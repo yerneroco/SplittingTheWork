@@ -18,10 +18,10 @@ public class Chunk implements Serializable {
      */
     public Chunk() {
         blocks = new Block[WIDTH][LENGTH][HEIGHT];
-        x = 0;
-        z = 0;
-        biome = Biome.Void;
-
+        setX(0);
+        setZ(0);
+        setBiome(Biome.Void);
+        fillChunk();
         
 /*
         for (int bX = 0; bX < WIDTH; bX++) {
@@ -38,18 +38,28 @@ public class Chunk implements Serializable {
     /**
      * Create a base forest Void chunk with location 0,0 in the world. Sets every block's x,y,z equal its location
      * in the chunk, the chunk it is located in, and the block tpe of air.
-     * @param x
-     * @param z
+     *
+     * @param x Chunk's x in the map
+     * @param z Chunk's y in the map
      */
     public Chunk(int x, int z) {
-        this.x = x;
-        this.z = z;
-        this.biome = Biome.Void;
+        blocks = new Block[WIDTH][LENGTH][HEIGHT];
+        setX(x);
+        setZ(z);
+        setBiome(Biome.Void);
+        fillChunk();
     }
-    public Chunk(int x, int z,Biome biome) {
-        this.x = x;
-        this.z = z;
-        this.biome = biome;
+
+    public Chunk(int x, int z, Biome biome) {
+        blocks = new Block[WIDTH][LENGTH][HEIGHT];
+        setX(x);
+        setZ(z);
+        setBiome(biome);
+        fillChunk();
+
+    }
+
+    private void fillChunk() {
         switch (biome) {
             case Tundra:
                 createTundra();
@@ -90,12 +100,23 @@ public class Chunk implements Serializable {
 
     private void createTundra() {
     }
+
     private void createTaiga() {
     }
+
     private void createPlains() {
     }
+
     private void createVoid() {
+        for (int w = 0; w < blocks.length; w++) {
+            for (int l = 0; l < blocks[0].length; l++) {
+                for (int h = 0; h < blocks[0][0].length; h++) {
+                    blocks[w][l][h] = new Block(w, h, l, x, z, BlockType.AIR);
+                }
+            }
+        }
     }
+
     private void createSwamp() {
     }
 
@@ -117,24 +138,25 @@ public class Chunk implements Serializable {
 
     public void createLogicalBlockDistribution() {
         for (int bX = 0; bX < WIDTH; bX++) {
-            for (int bY = 0; bY < LENGTH; bY++) {
-                for (int bZ = 0; bZ < HEIGHT; bZ++) {
-                    if (bZ < 20) {
-                        blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.SAND);
-                    } else if (bZ < 40) {
-                        blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.DIRT);
-                    } else if (bZ < 60) {
-                        blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.STONE);
-                    } else if (bZ < 70) {
-                        blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.WATER);
+            for (int bY = 0; bY < HEIGHT; bY++) {
+                for (int bZ = 0; bZ < LENGTH; bZ++) {
+                    if (bY < 20) {
+                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.SAND);
+                    } else if (bY < 40) {
+                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.DIRT);
+                    } else if (bY < 60) {
+                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.STONE);
+                    } else if (bY < 70) {
+                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.WATER);
                     } else {
-                        blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.AIR);
+                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.AIR);
                     }
                 }
             }
         }
     }
-    public void addOreVein(){
+
+    public void addOreVein() {
     /*
     solid chunk of dirt
     ore veins
@@ -142,7 +164,8 @@ public class Chunk implements Serializable {
         random walk away from start
     */
     }
-    public static Block[][][] addOreVein(Block[][][] blks){
+
+    public static Block[][][] addOreVein(Block[][][] blks) {
         Block[][][] newBlocks = new Block[WIDTH][LENGTH][HEIGHT];
         return newBlocks;
     }
@@ -178,5 +201,30 @@ public class Chunk implements Serializable {
 
     public void setZ(int z) {
         this.z = z;
+    }
+
+    public static void printBlocks(Block[][][] blocks) {
+        //System.out.println(blocks.length);//width
+        //System.out.println(blocks[0].length);//length
+        //System.out.println(blocks[0][0].length);//height
+        for (int h = blocks[0][0].length - 1; h >= 0; h--) {
+            for (int w = 0; w < blocks.length; w++) {
+                if (h == blocks[0][0].length - 1) {
+                    System.out.print(w + ":");
+                } else {
+                    System.out.print("  ");
+                    if (w > 9) {
+                        System.out.print(" ");
+                    }
+                }
+                for (int l = 0; l < blocks[0].length; l++) {
+                    System.out.print(blocks[w][l][h].getType().ordinal());
+
+                }
+                System.out.print(" ");
+            }
+            System.out.println();
+
+        }
     }
 }
