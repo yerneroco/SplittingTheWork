@@ -1,5 +1,5 @@
 package com.jrm.stw;
 
 public enum Biome {
-    Tundra, Taiga, Plains, Swamp, Forest, Shrubland, RainForest, SeasonalForest, Savanna, Void, Desert
+    Forest, Plains, Desert, Void, RainForest, Savanna, SeasonalForest, Shrubland, Swamp, Taiga,Tundra;
 }

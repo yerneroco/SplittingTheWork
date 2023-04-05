@@ -2,63 +2,77 @@ package com.jrm.stw;
 
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class Chunk implements Serializable {
     public static final int WIDTH = 32;
     public static final int LENGTH = 32;
     public static final int HEIGHT = 100;
 
-    private int x, z;
+    private int x, y;
     private Biome biome;
+    private boolean land;
+    private long seed;
     private Block[][][] blocks;
 
     /**
-     * Create a base forest Void chunk with location 0,0 in the world. Sets every block's x,y,z equal its location
-     * in the chunk, the chunk it is located in, and the block tpe of air.
+     * Create a Void chunk with location 0,0 in the world.
+     * Assumes this chunk is land and the seed is 12345L.
+     * Calls the Forest fill method for the chunk.
      */
     public Chunk() {
         blocks = new Block[WIDTH][LENGTH][HEIGHT];
         setX(0);
-        setZ(0);
+        setY(0);
         setBiome(Biome.Void);
+        this.land = true;
+        seed = 12345L;
         fillChunk();
-        
-/*
-        for (int bX = 0; bX < WIDTH; bX++) {
-            for (int bY = 0; bY < LENGTH; bY++) {
-                for (int bZ = 0; bZ < HEIGHT; bZ++) {
-                    //blocks[x][bY][z] = new Block();
-                    blocks[bX][bY][bZ] = new Block(bX, bY, bZ, this.x, this.z, BlockType.AIR);
-                }
-            }
-        }
-*/
+
     }
 
     /**
-     * Create a base forest Void chunk with location 0,0 in the world. Sets every block's x,y,z equal its location
-     * in the chunk, the chunk it is located in, and the block tpe of air.
+     * Creates a Void chunk with location x,y in the world.
+     * Assumes this chunk is land and the seed is 12345L.
+     * Calls the Forest fill method for the chunk.
      *
      * @param x Chunk's x in the map
-     * @param z Chunk's y in the map
+     * @param y Chunk's y in the map
      */
-    public Chunk(int x, int z) {
+    public Chunk(int x, int y) {
         blocks = new Block[WIDTH][LENGTH][HEIGHT];
         setX(x);
-        setZ(z);
+        setY(y);
         setBiome(Biome.Void);
+        this.land = false;
+        seed = 12345L;
         fillChunk();
     }
 
-    public Chunk(int x, int z, Biome biome) {
+    /**
+     * Creates a chunk of Biome biome with location x,y in the world.
+     * Sets land status and seed to passed in values
+     * Calls the proper fill method for the chunk's biome.
+     * @param x
+     * @param y
+     * @param biome
+     * @param land
+     * @param seed
+     */
+    public Chunk(int x, int y, Biome biome, boolean land, long seed) {
         blocks = new Block[WIDTH][LENGTH][HEIGHT];
         setX(x);
-        setZ(z);
+        setY(y);
         setBiome(biome);
+        this.land = land;
+        this.seed = seed;
         fillChunk();
 
     }
 
+    /**
+     * Directs to the correct Fill method for the chunk's biome
+     */
     private void fillChunk() {
         switch (biome) {
             case Tundra:
@@ -92,70 +106,211 @@ public class Chunk implements Serializable {
                 createVoid();
                 break;
             case Desert:
+                createDesert();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + biome);
         }
     }
 
-    private void createTundra() {
+    /**
+     * Fills chunk with a dirt and grass top
+     */
+    private void createForest() {
+        for (int w = 0; w < WIDTH; w++) {
+            for (int l = 0; l < LENGTH; l++) {
+                for (int h = 0; h < HEIGHT; h++) {
+                    BlockType type = BlockType.AIR;
+                    if (land) {
+                        if (h >= 70) {
+                            type = BlockType.AIR;
+                        } else if (h == 69) {
+                            Random rand = new Random(seed);
+                            if (rand.nextInt(10) > 5) {
+                                type = BlockType.DIRT;
+                            } else {
+                                type = BlockType.GRASS;
+                            }
+                        } else if (h >= 60) {
+                            type = BlockType.DIRT;
+                        } else if (h >= 40) {
+                            type = BlockType.STONE;
+                        } else if (h >= 20) {
+                            type = BlockType.STONE;
+                        } else {
+                            type = BlockType.STONE;
+                        }
+                    } else {
+                        if (h >= 68) {
+                            type = BlockType.AIR;
+                        } else if (h >= 30) {
+                            type = BlockType.WATER;
+                        } else if (h >= 20) {
+                            type = BlockType.DIRT;
+                        } else if (h >= 10) {
+                            type = BlockType.STONE;
+                        }
+
+                    }
+                    blocks[w][l][h] = new Block(w, l, h, this.x, this.y, type);
+
+
+                }
+            }
+        }
     }
 
-    private void createTaiga() {
-    }
-
+    /**
+     * Fills the chunk with a majority of grass on top with dirt mixed in.
+     */
     private void createPlains() {
+        for (int w = 0; w < WIDTH; w++) {
+            for (int l = 0; l < LENGTH; l++) {
+                for (int h = 0; h < HEIGHT; h++) {
+                    BlockType type = BlockType.AIR;
+                    if (land) {
+                        if (h >= 70) {
+                            type = BlockType.AIR;
+                        } else if (h == 69) {
+                            Random rand = new Random(seed);
+                            if (rand.nextInt(10) > 3) {
+                                type = BlockType.DIRT;
+                            } else {
+                                type = BlockType.GRASS;
+                            }
+                        } else if (h >= 60) {
+                            type = BlockType.DIRT;
+                        } else if (h >= 40) {
+                            type = BlockType.STONE;
+                        } else if (h >= 20) {
+                            type = BlockType.STONE;
+                        } else {
+                            type = BlockType.STONE;
+                        }
+
+                    } else {
+                        if (h >= 68) {
+                            type = BlockType.AIR;
+                        } else if (h >= 30) {
+                            type = BlockType.WATER;
+                        } else if (h >= 20) {
+                            type = BlockType.DIRT;
+                        } else if (h >= 10) {
+                            type = BlockType.STONE;
+                        }
+
+                    }
+                    blocks[w][l][h] = new Block(w, l, h, this.x, this.y, type);
+                }
+            }
+        }
+    }
+
+    /**
+     * Fills the chunk with sand on top
+     */
+    private void createDesert() {
+        for (int w = 0; w < WIDTH; w++) {
+            for (int l = 0; l < LENGTH; l++) {
+                for (int h = 0; h < HEIGHT; h++) {
+                    BlockType type = BlockType.AIR;
+                    if (land) {
+                        if (h >= 70) {
+                            type = BlockType.AIR;
+                        } else if (h >= 60) {
+                            type = BlockType.SAND;
+                        } else if (h >= 40) {
+                            type = BlockType.STONE;
+                        } else if (h >= 20) {
+                            type = BlockType.STONE;
+                        } else {
+                            type = BlockType.STONE;
+                        }
+                    } else {
+                        if (h >= 68) {
+                            type = BlockType.AIR;
+                        } else if (h >= 30) {
+                            type = BlockType.WATER;
+                        } else if (h >= 20) {
+                            type = BlockType.DIRT;
+                        } else if (h >= 10) {
+                            type = BlockType.STONE;
+                        }
+                    }
+                    blocks[w][l][h] = new Block(w, l, h, this.x, this.y, type);
+
+                }
+            }
+        }
     }
 
     private void createVoid() {
         for (int w = 0; w < blocks.length; w++) {
             for (int l = 0; l < blocks[0].length; l++) {
                 for (int h = 0; h < blocks[0][0].length; h++) {
-                    blocks[w][l][h] = new Block(w, h, l, x, z, BlockType.AIR);
+                    blocks[w][l][h] = new Block(w, h, l, x, y, BlockType.AIR);
                 }
             }
         }
     }
-
-    private void createSwamp() {
-    }
-
-    private void createForest() {
-    }
-
-    private void createShrubland() {
-    }
+    //Unimplemented Biomes below
 
     private void createRainForest() {
-    }
-
-    private void createSeasonalForest() {
+        //Not implemented
     }
 
     private void createSavanna() {
+        //Not implemented
     }
 
+    private void createSeasonalForest() {
+        //Not implemented
+    }
 
+    private void createShrubland() {
+        //Not implemented
+    }
+
+    private void createSwamp() {
+        //Not implemented
+    }
+
+    private void createTaiga() {
+        //Not implemented
+    }
+
+    private void createTundra() {
+        //Not implemented
+    }
+
+    /**
+     * Fills the chunk with a random but semi logical block distribution
+     */
     public void createLogicalBlockDistribution() {
-        for (int bX = 0; bX < WIDTH; bX++) {
-            for (int bY = 0; bY < HEIGHT; bY++) {
-                for (int bZ = 0; bZ < LENGTH; bZ++) {
-                    if (bY < 20) {
-                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.SAND);
-                    } else if (bY < 40) {
-                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.DIRT);
-                    } else if (bY < 60) {
-                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.STONE);
-                    } else if (bY < 70) {
-                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.WATER);
+        for (int w = 0; w < WIDTH; w++) {
+            for (int l = 0; l < LENGTH; l++) {
+                for (int h = 0; h < HEIGHT; h++) {
+                    BlockType type = BlockType.AIR;
+                    if (h >= 70) {
+                        type = BlockType.AIR;
+                    } else if (h >= 60) {
+                        type = BlockType.WATER;
+                    } else if (h >= 40) {
+                        type = BlockType.STONE;
+                    } else if (h >= 20) {
+                        type = BlockType.DIRT;
                     } else {
-                        blocks[bX][bZ][bY] = new Block(bX, bY, bZ, this.x, this.z, BlockType.AIR);
+                        type = BlockType.SAND;
                     }
+                    blocks[w][l][h] = new Block(w, l, h, this.x, this.y, type);
+
                 }
             }
         }
+
     }
 
+    //Unimplemented ore methods
     public void addOreVein() {
     /*
     solid chunk of dirt
@@ -165,7 +320,7 @@ public class Chunk implements Serializable {
     */
     }
 
-    public static Block[][][] addOreVein(Block[][][] blks) {
+    public static Block[][][] addOreVein(Block[][][] blocks) {
         Block[][][] newBlocks = new Block[WIDTH][LENGTH][HEIGHT];
         return newBlocks;
     }
@@ -195,14 +350,19 @@ public class Chunk implements Serializable {
         this.x = x;
     }
 
-    public int getZ() {
-        return z;
+    public int getY() {
+        return y;
     }
 
-    public void setZ(int z) {
-        this.z = z;
+    public void setY(int y) {
+        this.y = y;
     }
 
+    /**
+     * Prints the blocks inside a chunk by slicing into the chunk vertically.
+     * Displays a vertical slices left to right on the screen
+     * @param blocks
+     */
     public static void printBlocks(Block[][][] blocks) {
         //System.out.println(blocks.length);//width
         //System.out.println(blocks[0].length);//length
@@ -226,5 +386,34 @@ public class Chunk implements Serializable {
             System.out.println();
 
         }
+    }
+
+    /**
+     * Outputs the blocks inside a chunk by slicing into the chunk vertically.
+     * Displays a vertical slices left to right on the screen
+     * @return
+     */
+    public String toString() {
+        String out = "";
+        for (int h = blocks[0][0].length - 1; h >= 0; h--) {
+            for (int l = 0; l < blocks.length; l++) {
+                if (h == blocks[0][0].length - 1) {
+                    out += (l + ":");
+                } else {
+                    out += ("  ");
+                    if (l > 9) {
+                        out += (" ");
+                    }
+                }
+                for (int w = 0; w < blocks[0].length; w++) {
+                    out += blocks[w][l][h].getType().ordinal();
+
+                }
+                out += (" ");
+            }
+            out += "\n";
+
+        }
+        return out;
     }
 }

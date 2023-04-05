@@ -10,23 +10,63 @@ import java.util.Random;
 public class MapGenerator {
     private double[][] temperatures;
     private double[][] rainFall;
-    private Biome[][] biomes;
-    private int[][] landMass;
-    private Map map;
 
-    public static int[][] generateLandRandom(long seed, int width, int length) {
+    private Biome[][] biomes;
+    private boolean[][] landMass;
+    private Map map;
+    private long seed;
+    private int mapWidth;
+    private int mapLength;
+
+    public MapGenerator(){
+        seed = 12345L;
+        mapWidth = 10;
+        mapLength = 10;
+
+        temperatures = generateNoiseMap(mapWidth,mapLength);
+        rainFall = generateNoiseMap(mapWidth,mapLength);
+
+
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Biome[][] generateBiomes(int width, int length){
+
+        return biomes;
+    }
+    public static double[][] generateNoiseMap(int width, int length) {
+        double[][] noiseMap = new double[width][length];
+        Random random = new Random();
+
+        // Generate random values for the noise map
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                noiseMap[i][j] = random.nextDouble() * 10; // Generate random value between 0 and 10
+            }
+        }
+
+        return noiseMap;
+    }
+    public static boolean[][] generateLandRandom(long seed, int width, int length) {
         //uses seed to create random
         Random random = new Random(seed);
         //initialize landMass as new array of this.width and this.length size
-        int[][] land = new int[width][length];
+        boolean[][] land = new boolean[width][length];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < length; j++) {
                 int rand = random.nextInt(10);
                 //1 in 10 chance of being land
                 if (rand >= 1) {
-                    land[i][j] = 0;
+                    land[i][j] = false;
                 } else {
-                    land[i][j] = 1;
+                    land[i][j] = true;
                 }
             }
         }
@@ -43,7 +83,13 @@ public class MapGenerator {
         //place a random value, 1 or 0, in every part of the array
         for (int i = 0; i < map.width; i++) {
             for (int j = 0; j < map.length; j++) {
-                landMass[i][j] = random.nextInt(2); // generates 0 or 1
+                int rand = random.nextInt(10);
+                //1 in 10 chance of being land
+                if (rand >= 1) {
+                    landMass[i][j] = false;
+                } else {
+                    landMass[i][j] = true;
+                }
             }
         }
     }
@@ -54,11 +100,11 @@ public class MapGenerator {
      *
      * @return 2d array of whether or not a chunk is ocean or land
      */
-    public static int[][] generateLandMass(long seed, int width, int length) {
+    public static boolean[][] generateLandMass(long seed, int width, int length) {
         //uses seed to create random
         Random rand = new Random(seed);
 
-        int[][] land = new int[width][length];
+        boolean[][] land = new boolean[width][length];
         land = generateLandRandom(seed, width, length);
         print(land);
         land = zoom(land);
@@ -95,11 +141,11 @@ public class MapGenerator {
         printLandToFile();
     }
 
-    private static void print(int[][] arr) {
+    private static void print(boolean[][] land) {
         String out = "";
-        for (int r = 0; r < arr.length; r++) {
-            for (int c = 0; c < arr[0].length; c++) {
-                out += arr[c][r] + " ";
+        for (int r = 0; r < land.length; r++) {
+            for (int c = 0; c < land[0].length; c++) {
+                out += land[c][r] + " ";
             }
             out += "\n";
         }
@@ -111,7 +157,13 @@ public class MapGenerator {
         String out = "";
         for (int r = 0; r < map.length; r++) {
             for (int c = 0; c < map.width; c++) {
-                out += landMass[c][r] + " ";
+                if (landMass[c][r]) {
+                    out += 1 + " ";
+
+                } else {
+                    out += 0 + " ";
+
+                }
             }
             out += "\n";
         }
@@ -134,7 +186,13 @@ public class MapGenerator {
             // write the contents of the landMass array to the file
             for (int r = 0; r < map.length; r++) {
                 for (int c = 0; c < map.width; c++) {
-                    fw.write(landMass[c][r] + " ");
+                    if (landMass[c][r]) {
+                        fw.write(1 + " ");
+
+                    } else {
+                        fw.write(0 + " ");
+
+                    }
                 }
                 fw.write("\n");
             }
@@ -161,7 +219,13 @@ public class MapGenerator {
             // write the contents of the landMass array to the file
             for (int r = 0; r < map.length; r++) {
                 for (int c = 0; c < map.width; c++) {
-                    fw.write(landMass[c][r] + " ");
+                    if (landMass[c][r]) {
+                        fw.write(1 + " ");
+
+                    } else {
+                        fw.write(0 + " ");
+
+                    }
                 }
                 fw.write("\n");
             }
@@ -173,7 +237,7 @@ public class MapGenerator {
         }
     }
 
-    private void printLandToFile(int[][] land, String fileName) {
+    private void printLandToFile(boolean[][] land, String fileName) {
         try {
             // create a new directory called "landmass"
             File directory = new File("landMass");
@@ -188,7 +252,13 @@ public class MapGenerator {
             // write the contents of the landMass array to the file
             for (int r = 0; r < landMass.length; r++) {
                 for (int c = 0; c < land[0].length; c++) {
-                    fw.write(land[c][r] + " ");
+                    if (landMass[c][r]) {
+                        fw.write(1 + " ");
+
+                    } else {
+                        fw.write(0 + " ");
+
+                    }
                 }
                 fw.write("\n");
             }
@@ -205,7 +275,8 @@ public class MapGenerator {
         landMass = landMass;
     }
 
-    private static int[][] removeTooMuchOcean(int[][] landMass) {
+    private static boolean
+            [][] removeTooMuchOcean(boolean[][] landMass) {
 
         return landMass;
     }
@@ -214,15 +285,15 @@ public class MapGenerator {
     private void addIsland() {
         int width = landMass.length;
         int length = landMass[0].length;
-        int[][] newChunks = new int[landMass.length][landMass[0].length];
-        Random rand = new Random(map.getSeed());
+        boolean[][] newLand = new boolean[landMass.length][landMass[0].length];
+        Random rand = new Random(seed);
 
         int order = 0;
         for (int c = 0; c < width; c++) {
             for (int r = 0; r < length; r++) {
                 //check number of water tiles surrounding current block
                 int count = 0;
-                if (landMass[c][r] == 0) {
+                if (!landMass[c][r]) {
                     //make sure square is not an edge
                     if (c != 0 && r != 0) {
                         if (c != width - 1 && r != length - 1) {
@@ -230,7 +301,7 @@ public class MapGenerator {
                             //checks amount of water surrounding square
                             for (int i = -1; i <= 1; i++) {
                                 for (int j = -1; j <= 1; j++) {
-                                    if (landMass[c + j][r + i] == 0) {
+                                    if (!landMass[c + j][r + i]) {
                                         count++;
                                     }
                                 }
@@ -242,30 +313,30 @@ public class MapGenerator {
                         //if more than 7 out of 9 tiles are water
                         //50% chance of turning into water
                         if (rand.nextInt() % 2 == 0) {
-                            newChunks[c][r] = 0;
+                            newLand[c][r] = false;
                             //50% chance of turning into land
                         } else {
-                            newChunks[c][r] = 1;
+                            newLand[c][r] = true;
                         }
                     } else {
                         //if less than 7 out of 9 tiles are water
                         //keep this tile water
-                        newChunks[c][r] = 0;
+                        newLand[c][r] = false;
                     }
                     //if the tile is already land set new array to the same
                 } else {
-                    newChunks[c][r] = 1;
+                    newLand[c][r] = true;
                 }
                 order++;
             }
         }
-        landMass = newChunks;
+        landMass = newLand;
     }
 
-    private static int[][] addIsland(int[][] landMass, long seed) {
+    private static boolean[][] addIsland(boolean[][] landMass, long seed) {
         int width = landMass.length;
         int length = landMass[0].length;
-        int[][] newChunks = new int[width][length];
+        boolean[][] newLand = new boolean[width][length];
         Random rand = new Random(seed);
 
         int order = 0;
@@ -274,7 +345,7 @@ public class MapGenerator {
 
                 //check number of water tiles surrounding current block
                 int count = 0;
-                if (landMass[c][r] == 0) {
+                if (!landMass[c][r]) {
                     //make sure square is not an edge
                     if (c != 0 && r != 0) {
                         if (c != width - 1 && r != length - 1) {
@@ -282,7 +353,7 @@ public class MapGenerator {
                             //checks amount of water surrounding square
                             for (int i = -1; i <= 1; i++) {
                                 for (int j = -1; j <= 1; j++) {
-                                    if (landMass[c + i][r + j] == 0) {
+                                    if (!landMass[c + i][r + j]) {
                                         count++;
                                     }
                                 }
@@ -294,49 +365,49 @@ public class MapGenerator {
                         //if more than 7 out of 9 tiles are water
                         //50% chance of turning into water
                         if (rand.nextInt() % 2 == 0) {
-                            newChunks[c][r] = 0;
+                            newLand[c][r] = false;
                             //50% chance of turning into land
                         } else {
-                            newChunks[c][r] = 1;
+                            newLand[c][r] = true;
                         }
                     } else {
                         //if less than 7 out of 9 tiles are water
                         //keep this tile water
-                        newChunks[c][r] = 0;
+                        newLand[c][r] = false;
                     }
                     //if the tile is already land set new array to the same
                 } else {
-                    newChunks[c][r] = 1;
+                    newLand[c][r] = true;
                 }
                 order++;
             }
         }
-        //return new Map(map.width,length, newChunks);
-        return newChunks;
+        //return new Map(map.width,length, newLand);
+        return newLand;
     }
 
 
-    private static int[][] zoom(int[][] landMass) {
+    private static boolean[][] zoom(boolean[][] landMass) {
         //create a new array 2x the size of the old one
         int newWidth = landMass.length * 2;
         int newLength = landMass[0].length * 2;
-        int[][] newLandMass = new int[newWidth][newLength];
+        boolean[][] newLand = new boolean[newWidth][newLength];
         //set every 4 tiles equal to one from the old array
         for (int r = 0; r < landMass.length; r++) {
             for (int c = 0; c < landMass[0].length; c++) {
-                newLandMass[2 * c][2 * r] = landMass[c][r];
-                newLandMass[(2 * c) + 1][2 * r] = landMass[c][r];
-                newLandMass[2 * c][(2 * r) + 1] = landMass[c][r];
-                newLandMass[(2 * c) + 1][(2 * r) + 1] = landMass[c][r];
+                newLand[2 * c][2 * r] = landMass[c][r];
+                newLand[(2 * c) + 1][2 * r] = landMass[c][r];
+                newLand[2 * c][(2 * r) + 1] = landMass[c][r];
+                newLand[(2 * c) + 1][(2 * r) + 1] = landMass[c][r];
 
             }
         }
-        return newLandMass;
+        return newLand;
     }
 
     private void zoom() {
         //copy landmass into land
-        int[][] land = new int[map.width][map.length];
+        boolean[][] land = new boolean[map.width][map.length];
         for (int r = 0; r < map.length; r++) {
             for (int c = 0; c < map.width; c++) {
                 land[c][r] = landMass[c][r];
@@ -345,7 +416,7 @@ public class MapGenerator {
         //create new array 2x the size of old one
         int width = map.width * 2;
         int length = map.length * 2;
-        landMass = new int[width][length];
+        landMass = new boolean[width][length];
         //set every 4 tiles equal to one from the old array
         for (int r = 0; r < length / 2; r++) {
             for (int c = 0; c < width / 2; c++) {
@@ -402,20 +473,20 @@ public class MapGenerator {
         //starting zoom is pixels = 4096 final blocks or 2^12 so 12 zooms
         int newWidth = width *2;
         int newlength = length *2;
-        Chunk[][] newChunks = new Chunk[newWidth][newlength];
+        Chunk[][] newLand = new Chunk[newWidth][newlength];
         for(int r = 0; r < length; r++){
             for(int c = 0; c < width; c++){
-                newChunks[2*c][2*r] = chunks[c][r];
-                newChunks[(2*c)+1][2*r] = chunks[c][r];
-                newChunks[2*c][(2*r)+1] = chunks[c][r];
-                newChunks[(2*c)+1][(2*r)+1] = chunks[c][r];
+                newLand[2*c][2*r] = chunks[c][r];
+                newLand[(2*c)+1][2*r] = chunks[c][r];
+                newLand[2*c][(2*r)+1] = chunks[c][r];
+                newLand[(2*c)+1][(2*r)+1] = chunks[c][r];
 
             }
         }
-        return new Map(newWidth,newlength,newChunks);
+        return new Map(newWidth,newlength,newLand);
 //       width = newWidth;
 //       length = newWidth;
-//       chunks = newChunks;
+//       chunks = newLand;
 //
 //       return this;
     }
@@ -423,7 +494,7 @@ public class MapGenerator {
 
     /*
     public Map addIsland(){
-        Chunk[][] newChunks = new Chunk[width][length];
+        Chunk[][] newLand = new Chunk[width][length];
         Random rand = new Random(seed);
         int order = 0;
         for(int r = 0; r < length; r++){
@@ -446,21 +517,21 @@ public class MapGenerator {
                     //Change chances of an island forming
                     if(count > 7){
                         if(rand.nextInt() % 2 == 0){
-                            newChunks[c][r] = new Chunk(c,r, 0, order);
+                            newLand[c][r] = new Chunk(c,r, 0, order);
                         }else{
-                            newChunks[c][r] = new Chunk(c,r, chunks[c][r].value, order);
+                            newLand[c][r] = new Chunk(c,r, chunks[c][r].value, order);
                         }
                     }else{
-                        newChunks[c][r] = new Chunk(c,r, 0, order);
+                        newLand[c][r] = new Chunk(c,r, 0, order);
                     }
 
                 }else{
-                    newChunks[c][r] = new Chunk(c,r,chunks[c][r].value,order);
+                    newLand[c][r] = new Chunk(c,r,chunks[c][r].value,order);
                 }
                 order++;
             }
         }
-        return new Map(width,length, newChunks);
+        return new Map(width,length, newLand);
     }*/
     public static void writeJsonToFile(Chunk chunk, String fileName) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();

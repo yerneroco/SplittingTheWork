@@ -88,7 +88,7 @@ public class Block implements Serializable {
      * @param y must be greater than zero and less than Chunk.HEIGHT.
      */
     public void setY(int y) {
-        if (y >= 0 && y < Chunk.HEIGHT) {
+        if (y >= 0 && y < Chunk.LENGTH) {
             this.y = y;
             this.universalY = y;
         } else {
@@ -111,7 +111,7 @@ public class Block implements Serializable {
      * @param z must be greater than zero and less than Chunk.LENGTH.
      */
     public void setZ(int z) {
-        if (z >= 0 && z < Chunk.LENGTH) {
+        if (z >= 0 && z < Chunk.HEIGHT) {
             this.z = z;
             calculateUniversalLocation();
         } else {
