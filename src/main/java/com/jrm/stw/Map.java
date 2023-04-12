@@ -5,9 +5,10 @@ import java.util.Random;
 public class Map {
     public final int width;
     public final int length;
+    private long seed;
+    private Random rand;
 
     private Chunk[][] chunks;
-    private long seed;
 
     public Map() {
         width = 10;
@@ -15,11 +16,16 @@ public class Map {
         //chunks = generateMap(0);
         chunks = new Chunk[width][length];
         seed = 12345;
+        //Biome[][] biomes = MapGenerator.generateNoiseMap(width,length,seed);
+        //this(10,10, )
     }
 
     public Map(int width, int length, Biome[][] biomes, int[][] land, long seed) {
         this.width = width;
         this.length = length;
+        chunks = new Chunk[width][length];
+
+
         this.chunks = chunks;
         this.seed = seed;
     }

@@ -1,6 +1,8 @@
 package com.jrm.stw;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.Random;
 
@@ -18,7 +20,7 @@ public class Chunk implements Serializable {
     /**
      * Create a Void chunk with location 0,0 in the world.
      * Assumes this chunk is land and the seed is 12345L.
-     * Calls the Forest fill method for the chunk.
+     * Calls the fillVoid method for the chunk.
      */
     public Chunk() {
         blocks = new Block[WIDTH][LENGTH][HEIGHT];
@@ -27,7 +29,7 @@ public class Chunk implements Serializable {
         setBiome(Biome.Void);
         this.land = true;
         seed = 12345L;
-        fillChunk();
+        fillChunks();
 
     }
 
@@ -46,13 +48,14 @@ public class Chunk implements Serializable {
         setBiome(Biome.Void);
         this.land = false;
         seed = 12345L;
-        fillChunk();
+        fillChunks();
     }
 
     /**
      * Creates a chunk of Biome biome with location x,y in the world.
      * Sets land status and seed to passed in values
      * Calls the proper fill method for the chunk's biome.
+     *
      * @param x
      * @param y
      * @param biome
@@ -66,14 +69,14 @@ public class Chunk implements Serializable {
         setBiome(biome);
         this.land = land;
         this.seed = seed;
-        fillChunk();
+        fillChunks();
 
     }
 
     /**
      * Directs to the correct Fill method for the chunk's biome
      */
-    private void fillChunk() {
+    private void fillChunks() {
         switch (biome) {
             case Tundra:
                 createTundra();
@@ -244,11 +247,14 @@ public class Chunk implements Serializable {
         }
     }
 
+    /**
+     * Fills the chunk with just air
+     */
     private void createVoid() {
         for (int w = 0; w < blocks.length; w++) {
             for (int l = 0; l < blocks[0].length; l++) {
                 for (int h = 0; h < blocks[0][0].length; h++) {
-                    blocks[w][l][h] = new Block(w, h, l, x, y, BlockType.AIR);
+                    blocks[w][l][h] = new Block(w, l, h, x, y, BlockType.AIR);
                 }
             }
         }
@@ -325,35 +331,81 @@ public class Chunk implements Serializable {
         return newBlocks;
     }
 
-
+    /**
+     * Gets blocks
+     *
+     * @return blocks value for this chunk
+     */
     public Block[][][] getBlocks() {
         return blocks;
     }
 
+    /**
+     * Sets blocks with deep copy
+     *
+     * @param blocks
+     */
     public void setBlocks(Block[][][] blocks) {
-        this.blocks = blocks;
+        for (int w = 0; w < WIDTH; w++) {
+            for (int l = 0; l < LENGTH; l++) {
+                for (int h = 0; h < HEIGHT; h++) {
+                    this.blocks[w][l][h] = blocks[w][l][h];
+                }
+            }
+        }
     }
 
+    /**
+     * Gets biome
+     *
+     * @return biome value for this chunk
+     */
     public Biome getBiome() {
         return biome;
     }
 
+    /**
+     * Sets Biome and updates the Block array
+     *
+     * @param biome
+     */
     public void setBiome(Biome biome) {
         this.biome = biome;
+        fillChunks();
     }
 
+    /**
+     * Gets x
+     *
+     * @return x value for this chunk
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Sets x
+     *
+     * @param x
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * Gets y
+     *
+     * @return y value for this chunk
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Sets y
+     *
+     * @param y
+     */
     public void setY(int y) {
         this.y = y;
     }
@@ -361,9 +413,10 @@ public class Chunk implements Serializable {
     /**
      * Prints the blocks inside a chunk by slicing into the chunk vertically.
      * Displays a vertical slices left to right on the screen
+     *
      * @param blocks
      */
-    public static void printBlocks(Block[][][] blocks) {
+    public static void printBlocks(Block[][] @NotNull [] blocks) {
         //System.out.println(blocks.length);//width
         //System.out.println(blocks[0].length);//length
         //System.out.println(blocks[0][0].length);//height
@@ -391,6 +444,7 @@ public class Chunk implements Serializable {
     /**
      * Outputs the blocks inside a chunk by slicing into the chunk vertically.
      * Displays a vertical slices left to right on the screen
+     *
      * @return
      */
     public String toString() {

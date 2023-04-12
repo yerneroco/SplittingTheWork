@@ -3,13 +3,28 @@ package com.jrm.stw;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String arg[]) {
-       /* Map test = new Map();
-        //test.fillChunksRandom();
-        Chunk[][] chunks = test.getMap();
-        //test.generateLandMass();
-        String fileName;
+    public static void main(String[] args) {
+        Map test = timeMapGeneration();
 
+        timeWriteToFile(test);
+
+        //Add Deep Ocean
+    }
+    public static Map timeMapGeneration() {
+        long startTime = System.nanoTime();
+
+        MapGenerator mapGen = new MapGenerator();
+        Map test = mapGen.getMap();
+
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime) / 1000000; // convert to milliseconds
+        System.out.println("Time taken: " + duration + "ms");
+        return test;
+    }
+    public static void timeWriteToFile(Map test){
+        Chunk[][] chunks = test.getChunks();
+        String fileName;
+        long startTime = System.nanoTime();
         try {
             for (int i = 0; i < chunks.length; i++) {
                 for (int j = 0; j < chunks[0].length; j++) {
@@ -20,8 +35,10 @@ public class Main {
             System.out.println("JSON file written successfully");
         } catch (IOException e) {
             System.err.println("Error writing JSON file: " + e.getMessage());
-        }*/
+        }
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime) / 1000000; // convert to milliseconds
+        System.out.println("Time taken: " + duration + "ms");
 
-        //Add Deep Ocean
     }
 }

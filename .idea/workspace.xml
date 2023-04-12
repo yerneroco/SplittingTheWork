@@ -9,48 +9,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
-      <change afterPath="$PROJECT_DIR$/htmlReport/css/coverage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/css/idea.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/img/arrowDown.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/img/arrowUp.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_BLOCK.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_CLASS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_LINE.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_LINE_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_METHOD.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_NAME_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/js/highlight.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/js/highlightjs-line-numbers.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_BLOCK.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_CLASS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_LINE.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_LINE_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_METHOD.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_NAME_DESC.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/00_init.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/01_zoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/02_addIsland.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/03_zoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/04_addIsland.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/05_addIsland.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/06_addIsland.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/07_addIsland.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/08_zoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/09_zoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generateLandMassSteps/10_addIsland.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landMass/landMass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/landMass/landMass.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jrm/stw/BlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jrm/stw/BlockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/jrm/stw/ChunkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/jrm/stw/ChunkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/jrm/stw/MapTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,21 +71,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -113,8 +94,9 @@
       <recent name="com.jrm.stw" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChunkTest.printBlocks">
-    <configuration name="BlockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.Main" />
       <module name="SplittingTheWork" />
       <extension name="coverage">
         <pattern>
@@ -122,10 +104,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jrm.stw" />
-      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.BlockTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,6 +124,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ChunkTest.createForest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SplittingTheWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jrm.stw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jrm.stw" />
+      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
+      <option name="METHOD_NAME" value="createForest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChunkTest.createLogicalBlockDistribution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
@@ -162,7 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChunkTest.printBlocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChunkTest.setBlocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
         <pattern>
@@ -172,24 +166,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.jrm.stw" />
       <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
-      <option name="METHOD_NAME" value="printBlocks" />
+      <option name="METHOD_NAME" value="setBlocks" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SplittingTheWork" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jrm.stw.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jrm.stw" />
-      <option name="MAIN_CLASS_NAME" value="com.jrm.stw.MapTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,10 +182,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChunkTest.printBlocks" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ChunkTest" />
-        <item itemvalue="JUnit.BlockTest" />
-        <item itemvalue="JUnit.MapTest" />
+        <item itemvalue="JUnit.ChunkTest.setBlocks" />
+        <item itemvalue="JUnit.ChunkTest.createForest" />
         <item itemvalue="JUnit.ChunkTest.createLogicalBlockDistribution" />
       </list>
     </recent_temporary>
@@ -250,10 +228,29 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java</url>
+          <line>141</line>
+          <properties class="com.jrm.stw.MapGenerator" method="zoom">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/jrm/stw/ChunkTest.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -264,7 +261,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest.ic" NAME="ChunkTest Coverage Results" MODIFIED="1680673636853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest.ic" NAME="ChunkTest Coverage Results" MODIFIED="1680829732955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalZ.ic" NAME="BlockTest.getUniversalZ Coverage Results" MODIFIED="1679359357463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -291,7 +288,7 @@
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getChunkZ.ic" NAME="BlockTest.getChunkZ Coverage Results" MODIFIED="1679359222213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1680673476286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1680820409815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getType.ic" NAME="BlockTest.getType Coverage Results" MODIFIED="1679362965393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

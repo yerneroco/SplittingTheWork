@@ -33,7 +33,7 @@ public class BlockTest {
     @Test
     public void getChunkZ() {
         Block tester = new Block();
-        assertEquals(0, tester.getChunkZ());
+        assertEquals(0, tester.getChunkY());
     }
 
     @Test
@@ -42,11 +42,15 @@ public class BlockTest {
         Block tester = new Block();
         assertEquals(0, tester.getUniversalX());
         //test 2
-        tester.setChunkX(5);
-        tester.setChunkZ(3);
-        assertEquals(160, tester.getUniversalX());
+        tester.setChunkX(2);
+        assertEquals(Chunk.WIDTH  *2, tester.getUniversalX());
+
+        tester.setChunkY(3);
+        tester.setX(Chunk.WIDTH);
+        assertEquals(Chunk.LENGTH  *2, tester.getUniversalX());
+
         tester.setX(5);
-        assertEquals(165, tester.getUniversalX());
+        assertEquals(Chunk.LENGTH  *2  +5, tester.getUniversalX());
 
     }
 
@@ -56,14 +60,15 @@ public class BlockTest {
         Block tester = new Block();
         assertEquals(0, tester.getUniversalY());
         //test 2
-        tester.setChunkZ(2);
-        assertEquals(0, tester.getUniversalY());
+        tester.setChunkY(2);
+        assertEquals(Chunk.LENGTH  *2, tester.getUniversalY());
 
         tester.setChunkX(3);
-        assertEquals(0, tester.getUniversalY());
+        tester.setY(Chunk.LENGTH);
+        assertEquals(Chunk.LENGTH  *2, tester.getUniversalY());
 
         tester.setY(5);
-        assertEquals(5, tester.getUniversalY());
+        assertEquals(Chunk.LENGTH  *2  +5, tester.getUniversalY());
     }
 
     @Test
@@ -73,10 +78,11 @@ public class BlockTest {
         assertEquals(0, tester.getUniversalZ());
         //test 2
         tester.setChunkX(5);
-        tester.setChunkZ(3);
-        assertEquals(96, tester.getUniversalZ());
+        tester.setChunkY(3);
+        tester.setZ(Chunk.HEIGHT);
+        assertEquals(0, tester.getUniversalZ());
         tester.setZ(5);
-        assertEquals(101, tester.getUniversalZ());
+        assertEquals(5, tester.getUniversalZ());
     }
 
     @Test
@@ -117,7 +123,7 @@ public class BlockTest {
         assertEquals(10, tester.getZ());
         // assertEquals(tester.getUniversalZ(), 10);
         //too high value
-        tester.setZ(32);
+        tester.setZ(Chunk.HEIGHT);
         assertEquals(10, tester.getZ());
         //assertEquals(tester.getUniversalZ(), 10);
     }
@@ -159,21 +165,21 @@ public class BlockTest {
 
 
     @Test
-    public void setChunkZ() {
+    public void setChunkY() {
         Block tester = new Block();
         //valid value
-        tester.setChunkZ(10);
-        assertEquals(10, tester.getChunkZ());
+        tester.setChunkY(10);
+        assertEquals(10, tester.getChunkY());
         //assertEquals(tester.getUniversalZ(), 10);
         //negative value
-        tester.setChunkZ(-1);
-        assertEquals(10, tester.getChunkZ());
-        tester.setChunkZ(0);
-        assertEquals(0, tester.getChunkZ());
+        tester.setChunkY(-1);
+        assertEquals(10, tester.getChunkY());
+        tester.setChunkY(0);
+        assertEquals(0, tester.getChunkY());
         //assertEquals(tester.getUniversalZ(), 10);
         //Too high value
-        //tester.setChunkZ(32);
-        //assertEquals(10,tester.getChunkZ());
+        //tester.setChunkY(32);
+        //assertEquals(10,tester.getChunkY());
         //assertEquals(tester.getUniversalZ(), 10);
     }
 
@@ -220,8 +226,8 @@ public class BlockTest {
         tester.setY(5);
         assertEquals(5,tester.getUniversalY());
         tester.setZ(5);
-        tester.setChunkZ(5);
-        assertEquals(165,tester.getUniversalZ());
+        tester.setChunkY(5);
+        assertEquals(165,tester.getUniversalY());
 
 
 
