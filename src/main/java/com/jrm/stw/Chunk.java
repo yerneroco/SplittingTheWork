@@ -73,6 +73,23 @@ public class Chunk implements Serializable {
 
     }
 
+    public Chunk(Chunk chunk){
+        this.x = chunk.getX();
+        this.y = chunk.getY();
+        this.biome = chunk.getBiome();
+        this.land = chunk.getLand();
+        this.seed = chunk.getSeed();
+        setBlocks(chunk.getBlocks());
+    }
+
+    private long getSeed() {
+        return seed;
+    }
+
+    private boolean getLand() {
+        return land;
+    }
+
     /**
      * Directs to the correct Fill method for the chunk's biome
      */
@@ -346,10 +363,11 @@ public class Chunk implements Serializable {
      * @param blocks
      */
     public void setBlocks(Block[][][] blocks) {
+        this.blocks = new Block[blocks.length][blocks[0].length][blocks[0][0].length];
         for (int w = 0; w < WIDTH; w++) {
             for (int l = 0; l < LENGTH; l++) {
                 for (int h = 0; h < HEIGHT; h++) {
-                    this.blocks[w][l][h] = blocks[w][l][h];
+                    this.blocks[w][l][h] = new Block(blocks[w][l][h]);
                 }
             }
         }

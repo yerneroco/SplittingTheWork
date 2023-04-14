@@ -26,7 +26,7 @@ public class MapGenerator {
 
 
     public MapGenerator() {
-        this(10, 10, 12345L);
+        this(2, 2, 12345L);
     }
 
 
@@ -51,28 +51,22 @@ public class MapGenerator {
     public void generateLandMass() {
         generateStartLandRandom();
         int count = 0;
-        printLand(count++,"init");
+        printLand(count++, "init");
         zoom();
-        printLand(count++,"zoom");
+        printLand(count++, "zoom");
         addIsland();
-        printLand(count++,"addIsland");
+        printLand(count++, "addIsland");
         zoom();
-        printLand(count++,"zoom");
+        printLand(count++, "zoom");
         addIsland();
-        printLand(count++,"addIsland");
+        printLand(count++, "addIsland");
         addIsland();
-        printLand(count++,"addIsland");
+        printLand(count++, "addIsland");
         addIsland();
-        printLand(count++,"addIsland");
+        printLand(count++, "addIsland");
         landMass = removeTooMuchOcean(landMass);
         addIsland();
-        printLand(count++,"addIsland");
-        zoom();
-        printLand(count++,"zoom");
-        zoom();
-        printLand(count++,"zoom");
-        addIsland();
-        printLand(count++,"addIsland");
+        printLand(count++, "addIsland");
         printLandToFile();
     }
 
@@ -92,24 +86,6 @@ public class MapGenerator {
 
     }
 
-    private void printLand() {
-        String out = "";
-        //loop through the 2d array
-        for (int x = 0; x < mapWidth; x++) {
-            for (int y = 0; y < mapLength; y++) {
-                if (landMass[x][y]) {
-                    out += 1 + " ";
-
-                } else {
-                    out += 0 + " ";
-
-                }
-            }
-            out += "\n";
-        }
-        System.out.println(out);
-
-    }
     private void printLand(int num, String operation) {
         String directoryName = "generateLandMassSteps";
         String fileName = String.format("%02d_%s.txt", num, operation);
@@ -136,8 +112,6 @@ public class MapGenerator {
             e.printStackTrace();
         }
     }
-
-
 
     private void zoom() {
         //copy landmass into land
@@ -255,19 +229,95 @@ public class MapGenerator {
         // Generate random values for the noise map
         for (int x = 0; x < mapWidth; x++) {
             for (int y = 0; y < mapLength; y++) {
-                noiseMap[x][y] = rand.nextDouble() * 10; // Generate random value between 0 and 10
+                noiseMap[x][y] = rand.nextDouble(); // Generate random value between 0 and 10
             }
         }
 
         return noiseMap;
     }
 
-    public Biome[][] generateBiomes() {
+    public void generateBiomes() {
+        printNoiseMap(temperatures, "Temperatures");
+        printNoiseMap(rainFall, "RainFall");
+        biomes = new Biome[mapWidth][mapLength];
+        for(int x = 0; x<mapWidth;x++){
+            for(int y = 0; y <mapLength;y++){
+                double temp = temperatures[x][y];
+                double rain = rainFall[x][y];
+                biomes[x][y] = Biome.Plains;
+                if(rain > 0.50){
+                    biomes[x][y] = Biome.Forest;
+                }else {
+                    if (temp > 0.5) {
+                        biomes[x][y] = Biome.Desert;
+                    }
+                }
+            }
+        }
+    }
 
-        return biomes;
+    private void printNoiseMap(double[][] noiseMap, String name) {
+        String directoryName = "NoiseMaps";
+        String fileName = String.format("%s.txt", name);
+        String filePath = directoryName + "/" + fileName;
+        File directory = new File(directoryName);
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+        try {
+            FileWriter fileWriter = new FileWriter(filePath);
+            // loop through the 2d array
+            for (int x = 0; x < noiseMap.length; x++) {
+                for (int y = 0; y < noiseMap[x].length; y++) {
+                    fileWriter.write(String.format("%f ", noiseMap[x][y]));
+                }
+                fileWriter.write("\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void generateMap() {
+        Chunk[][] chunks = new Chunk[mapWidth][mapLength];
+        for(int x = 0; x<mapWidth;x++){
+            for(int y = 0; y <mapLength;y++){
+                chunks[x][y] = new Chunk(x,y,biomes[x][y],landMass[x][y],seed);
+            }
+        }
+        map = new Map(mapWidth,mapLength,seed,chunks);
+    }
+    private static Chunk[][] generateMap(int width, int length,Biome[][] biomes,boolean[][]landMass,long seed) {
+        Chunk[][] chunks = new Chunk[width][length];
+        for(int x = 0; x<width;x++){
+            for(int y = 0; y <length;y++){
+                chunks[x][y] = new Chunk(x,y,biomes[x][y],landMass[x][y],seed);
+            }
+        }
+        return chunks;
+    }
+    public static Biome[][] generateBiomes(double[][] temperatures,double[][] rainFall,int mapWidth,int mapLength) {
+        //printNoiseMap(temperatures, "Temperatures");
+        //printNoiseMap(rainFall, "RainFall");
+        Biome[][] biomes = new Biome[mapWidth][mapLength];
+        for(int x = 0; x<mapWidth;x++){
+            for(int y = 0; y <mapLength;y++){
+                double temp = temperatures[x][y];
+                double rain = rainFall[x][y];
+                biomes[x][y] = Biome.Plains;
+                if(rain > 0.50){
+                    biomes[x][y] = Biome.Forest;
+                }else {
+                    if (temp > 0.5) {
+                        biomes[x][y] = Biome.Desert;
+                    }
+                }
+            }
+        }
+
+
+        return biomes;
     }
 
     public static double[][] generateNoiseMap(int width, int length, long seed) {
@@ -467,6 +517,25 @@ public class MapGenerator {
 
         File file = new File(directory, fileName);
         objectMapper.writeValue(file, json);
+    }
+
+    private void printLand() {
+        String out = "";
+        //loop through the 2d array
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = 0; y < mapLength; y++) {
+                if (landMass[x][y]) {
+                    out += 1 + " ";
+
+                } else {
+                    out += 0 + " ";
+
+                }
+            }
+            out += "\n";
+        }
+        System.out.println(out);
+
     }
 
     /**

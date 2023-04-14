@@ -42,13 +42,23 @@ public class Block implements Serializable {
      */
     public Block(int x, int y, int z, int chunkX, int chunkY, BlockType type) {
         setX(x);
-        setX(x);
         setY(y);
         setZ(z);
         setChunkX(chunkX);
         setChunkY(chunkY);
         calculateUniversalLocation();
         setType(type);
+    }
+
+    public Block(Block block) {
+        this.x = block.getX();
+        this.y = block.getY();
+        this.z = block.getZ();
+        this.chunkX = block.getChunkX();
+        this.chunkY = block.getChunkY();
+        calculateUniversalLocation();
+        this.type = block.getType();
+
     }
 
     /**

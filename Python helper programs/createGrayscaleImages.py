@@ -25,7 +25,7 @@ def get_text_files(directory):
 # Load the data from the file
 def load_data(file_path):
     with open(file_path, 'r') as f:
-        data = [[int(x) for x in line.split()] for line in f]
+        data = [[float(x) for x in line.split()] for line in f]
     return data
 
 # Draw the squares for a given data and position
@@ -35,7 +35,8 @@ def draw_squares(data, screen, start_row, start_col, max_rows, max_cols, square_
             data_row = row + ((len(data) - max_rows) // 2)
             data_col = col + ((len(data[0]) - max_cols) // 2)
             if 0 <= data_row < len(data) and 0 <= data_col < len(data[0]):
-                square_color = GREEN if data[data_row][data_col] else BLUE
+                #print('data'  + str(data[data_row][data_col]) +' '+str(data_row)  + ' '  + str(data_col) )
+                square_color = (data[data_row][data_col]*255,data[data_row][data_col]*255,data[data_row][data_col]*255)
             else:
                 square_color = BLACK
             square_rect = pygame.Rect(start_col + col * square_size, start_row + row * square_size, square_size, square_size)

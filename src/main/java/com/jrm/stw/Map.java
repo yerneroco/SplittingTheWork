@@ -25,16 +25,17 @@ public class Map {
         this.length = length;
         chunks = new Chunk[width][length];
 
-
         this.chunks = chunks;
         this.seed = seed;
     }
 
-    public Map(Biome[][] biomes, boolean[][] land, long seed) {
+    public Map(int width, int length, Long seed, Chunk[][] chunks){
+        this.width = width;
+        this.length = length;
         this.seed = seed;
-        this.chunks = chunks;
-        width = chunks.length;
-        length = chunks[0].length;
+        rand = new Random(seed);
+
+        setChunks(chunks);
     }
 
     private void fillMap(Biome[][] biomes, boolean[][] land) {
@@ -58,7 +59,12 @@ public class Map {
     }
 
     public void setChunks(Chunk[][] chunks) {
-        this.chunks = chunks;
+        this.chunks = new Chunk[chunks.length][chunks[0].length];
+        for(int x = 0; x< width;x++) {
+            for (int y = 0; y < length; y++) {
+                this.chunks[x][y] = new Chunk(chunks[x][y]);
+            }
+        }
     }
 
     public long getSeed() {
@@ -84,6 +90,12 @@ public class Map {
                 chunks[i][j].createLogicalBlockDistribution();
             }
         }
+    }
+    public Chunk getChunk(int x, int y){
+        return chunks[x][y];
+    }
+    public void setChunk(int x, int y, Chunk chunk){
+        chunks[x][y] = chunk;
     }
 
     public String toString() {
