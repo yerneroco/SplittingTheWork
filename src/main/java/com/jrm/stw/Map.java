@@ -29,7 +29,7 @@ public class Map {
         this.seed = seed;
     }
 
-    public Map(int width, int length, Long seed, Chunk[][] chunks){
+    public Map(int width, int length, Long seed, Chunk[][] chunks) {
         this.width = width;
         this.length = length;
         this.seed = seed;
@@ -41,7 +41,7 @@ public class Map {
     private void fillMap(Biome[][] biomes, boolean[][] land) {
         for (int c = 0; c < width; c++) {
             for (int r = 0; r < length; r++) {
-                chunks[c][r] = new Chunk(c,r,biomes[c][r],land[c][r],seed);
+                chunks[c][r] = new Chunk(c, r, biomes[c][r], land[c][r], seed);
             }
         }
     }
@@ -60,7 +60,7 @@ public class Map {
 
     public void setChunks(Chunk[][] chunks) {
         this.chunks = new Chunk[chunks.length][chunks[0].length];
-        for(int x = 0; x< width;x++) {
+        for (int x = 0; x < width; x++) {
             for (int y = 0; y < length; y++) {
                 this.chunks[x][y] = new Chunk(chunks[x][y]);
             }
@@ -91,10 +91,12 @@ public class Map {
             }
         }
     }
-    public Chunk getChunk(int x, int y){
+
+    public Chunk getChunk(int x, int y) {
         return chunks[x][y];
     }
-    public void setChunk(int x, int y, Chunk chunk){
+
+    public void setChunk(int x, int y, Chunk chunk) {
         chunks[x][y] = chunk;
     }
 

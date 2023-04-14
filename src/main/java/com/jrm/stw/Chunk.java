@@ -73,7 +73,7 @@ public class Chunk implements Serializable {
 
     }
 
-    public Chunk(Chunk chunk){
+    public Chunk(Chunk chunk) {
         this.x = chunk.getX();
         this.y = chunk.getY();
         this.biome = chunk.getBiome();

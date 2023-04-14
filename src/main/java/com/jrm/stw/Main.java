@@ -10,6 +10,7 @@ public class Main {
 
         //Add Deep Ocean
     }
+
     public static Map timeMapGeneration() {
         long startTime = System.nanoTime();
 
@@ -21,7 +22,8 @@ public class Main {
         System.out.println("Time taken: " + duration + "ms");
         return test;
     }
-    public static void timeWriteToFile(Map test){
+
+    public static void timeWriteToFile(Map test) {
         Chunk[][] chunks = test.getChunks();
         String fileName;
         long startTime = System.nanoTime();
