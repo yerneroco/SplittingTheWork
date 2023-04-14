@@ -1,6 +1,9 @@
 package com.jrm.stw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -22,7 +25,6 @@ public class MapGenerator {
 
     private Map map;
     private int newMapLength;
-    ;
 
 
     public MapGenerator() {
@@ -157,10 +159,7 @@ public class MapGenerator {
                         for (int j = -1; j <= 1; j++) {
                             if (!landMass[x + j][y + i]) {
                                 count++;
-                            }
-                        }
-                    }
-
+                            }}}
                     //Change chances of an island forming
                     if (count > 7) {
                         //if the surrounding 8 tiles are water
@@ -172,16 +171,13 @@ public class MapGenerator {
                             newLand[x][y] = true;
                         }
                     } else {
-                        //if less than 7 out of 9 tiles are water
-                        //keep this tile water
+                        //if less than 7 out of 9 tiles are water keep this tile water
                         newLand[x][y] = false;
                     }
                     //if the tile is already land set new array to the same
                 } else {
                     newLand[x][y] = true;
-                }
-            }
-        }
+                }}}
         landMass = newLand;
     }
 
@@ -509,17 +505,29 @@ public class MapGenerator {
         return new Map(width,length, newLand);
     }*/
     public static void writeJsonToFile(Chunk chunk, String fileName) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(chunk);
+        Block[][][] blocks = chunk.getBlocks();
+        int[][][] blks = new int[32][32][100];
 
-        File directory = new File("chunks");
+        // Loop through the array and add each element to the JSON array
+        for (int x = 0; x < blocks.length; x++) {
+            for (int y = 0; y < blocks[x].length; y++) {
+                for (int z = 0; z < blocks[x][y].length; z++) {
+                    blks[x][y][z] = blocks[x][y][z].getType().ordinal();
+                }
+            }
+        }
+
+        // Create directory if it doesn't exist
+        File directory = new File("data");
         if (!directory.exists()) {
             directory.mkdir();
         }
-
+        ObjectMapper mapper = new ObjectMapper();
+        // Write the JSON string to a file
         File file = new File(directory, fileName);
-        objectMapper.writeValue(file, json);
+        mapper.writeValue(file,blks);
     }
+
 
     private void printLand() {
         String out = "";

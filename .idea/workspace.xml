@@ -9,6 +9,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
+      <change afterPath="$PROJECT_DIR$/data/chunk0_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk0_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk1_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk2_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk3_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk4_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk5_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk6_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chunk7_7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +104,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,7 +126,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -207,9 +276,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java</url>
+          <line>465</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

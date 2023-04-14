@@ -170,11 +170,8 @@ public class Chunk implements Serializable {
                         } else if (h >= 10) {
                             type = BlockType.STONE;
                         }
-
                     }
                     blocks[w][l][h] = new Block(w, l, h, this.x, this.y, type);
-
-
                 }
             }
         }
@@ -434,7 +431,7 @@ public class Chunk implements Serializable {
      *
      * @param blocks
      */
-    public static void printBlocks(Block[][] @NotNull [] blocks) {
+    public static void printBlocks(Block[][][] blocks) {
         //System.out.println(blocks.length);//width
         //System.out.println(blocks[0].length);//length
         //System.out.println(blocks[0][0].length);//height
