@@ -26,10 +26,10 @@ public class Main {
         String fileName;
         long startTime = System.nanoTime();
         try {
-            for (int i = 0; i < chunks.length; i++) {
-                for (int j = 0; j < chunks[0].length; j++) {
-                    fileName = "chunk" + i + "_" + j + ".json";
-                    MapGenerator.writeJsonToFile(chunks[i][j], fileName);
+            for (int x = 0; x < chunks.length; x++) {
+                for (int y = 0; y < chunks[0].length; y++) {
+                    fileName = "chunk" + x + "_" + y + ".json";
+                    MapGenerator.writeJsonToFile(chunks[x][y], fileName);
                 }
             }
             System.out.println("JSON file written successfully");

@@ -9,43 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
-      <change afterPath="$PROJECT_DIR$/NoiseMaps/RainFall.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NoiseMaps/Temperatures.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python helper programs/createGrayscaleImages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python helper programs/createImages2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/createImages2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python helper programs/test/00_init.png" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/test/00_init.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python helper programs/test/01_zoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/test/01_zoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python helper programs/test/09_zoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/test/09_zoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python helper programs/test/10_addIsland.png" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/test/10_addIsland.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/00_init.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/00_init.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/00_init.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/01_zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/01_zoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/01_zoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/02_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/02_addIsland.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/02_addIsland.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/03_zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/03_zoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/03_zoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/04_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/04_addIsland.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/04_addIsland.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/05_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/05_addIsland.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/05_addIsland.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/06_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/06_addIsland.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/06_addIsland.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/07_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/07_addIsland.txt" beforeDir="false" afterPath="$PROJECT_DIR$/generateLandMassSteps/07_addIsland.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/08_zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/08_zoom.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/09_zoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/09_zoom.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/10_addIsland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/10_addIsland.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landMass/landMass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/landMass/landMass.txt" beforeDir="false" afterPath="$PROJECT_DIR$/landMass/landMass.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
