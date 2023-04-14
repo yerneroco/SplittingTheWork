@@ -240,14 +240,14 @@ public class MapGenerator {
         printNoiseMap(temperatures, "Temperatures");
         printNoiseMap(rainFall, "RainFall");
         biomes = new Biome[mapWidth][mapLength];
-        for(int x = 0; x<mapWidth;x++){
-            for(int y = 0; y <mapLength;y++){
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = 0; y < mapLength; y++) {
                 double temp = temperatures[x][y];
                 double rain = rainFall[x][y];
                 biomes[x][y] = Biome.Plains;
-                if(rain > 0.50){
+                if (rain > 0.50) {
                     biomes[x][y] = Biome.Forest;
-                }else {
+                } else {
                     if (temp > 0.5) {
                         biomes[x][y] = Biome.Desert;
                     }
@@ -281,34 +281,36 @@ public class MapGenerator {
 
     private void generateMap() {
         Chunk[][] chunks = new Chunk[mapWidth][mapLength];
-        for(int x = 0; x<mapWidth;x++){
-            for(int y = 0; y <mapLength;y++){
-                chunks[x][y] = new Chunk(x,y,biomes[x][y],landMass[x][y],seed);
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = 0; y < mapLength; y++) {
+                chunks[x][y] = new Chunk(x, y, biomes[x][y], landMass[x][y], seed);
             }
         }
-        map = new Map(mapWidth,mapLength,seed,chunks);
+        map = new Map(mapWidth, mapLength, seed, chunks);
     }
-    private static Chunk[][] generateMap(int width, int length,Biome[][] biomes,boolean[][]landMass,long seed) {
+
+    private static Chunk[][] generateMap(int width, int length, Biome[][] biomes, boolean[][] landMass, long seed) {
         Chunk[][] chunks = new Chunk[width][length];
-        for(int x = 0; x<width;x++){
-            for(int y = 0; y <length;y++){
-                chunks[x][y] = new Chunk(x,y,biomes[x][y],landMass[x][y],seed);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < length; y++) {
+                chunks[x][y] = new Chunk(x, y, biomes[x][y], landMass[x][y], seed);
             }
         }
         return chunks;
     }
-    public static Biome[][] generateBiomes(double[][] temperatures,double[][] rainFall,int mapWidth,int mapLength) {
+
+    public static Biome[][] generateBiomes(double[][] temperatures, double[][] rainFall, int mapWidth, int mapLength) {
         //printNoiseMap(temperatures, "Temperatures");
         //printNoiseMap(rainFall, "RainFall");
         Biome[][] biomes = new Biome[mapWidth][mapLength];
-        for(int x = 0; x<mapWidth;x++){
-            for(int y = 0; y <mapLength;y++){
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = 0; y < mapLength; y++) {
                 double temp = temperatures[x][y];
                 double rain = rainFall[x][y];
                 biomes[x][y] = Biome.Plains;
-                if(rain > 0.50){
+                if (rain > 0.50) {
                     biomes[x][y] = Biome.Forest;
-                }else {
+                } else {
                     if (temp > 0.5) {
                         biomes[x][y] = Biome.Desert;
                     }
