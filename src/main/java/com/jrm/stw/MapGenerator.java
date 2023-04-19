@@ -21,7 +21,6 @@ public class MapGenerator {
     private boolean[][] landMass;
 
     private Map map;
-    private int newMapLength;
 
 
     public MapGenerator() {
