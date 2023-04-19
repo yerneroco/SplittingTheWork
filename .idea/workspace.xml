@@ -9,73 +9,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
-      <change afterPath="$PROJECT_DIR$/data/chunk0_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk0_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk1_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk2_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk3_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk4_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk5_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk6_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunk7_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python helper programs/createBiomeImg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python helper programs/createLandMassImg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Biome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoiseMaps/RainFall.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoiseMaps/Temperatures.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python helper programs/createGrayscaleImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python helper programs/createGrayscaleImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python helper programs/createImages2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk0_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk1_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk2_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk3_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk4_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk5_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk6_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chunk7_7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/00_init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/01_zoom.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/02_addIsland.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/03_zoom.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/04_addIsland.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/05_addIsland.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/06_addIsland.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/07_addIsland.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generateLandMassSteps/display.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/landMass/landMass.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" afterDir="false" />
     </list>
@@ -105,7 +119,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,7 +155,7 @@
       <recent name="com.jrm.stw" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ChunkTest.printBlocks">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jrm.stw.Main" />
       <module name="SplittingTheWork" />
@@ -187,7 +201,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChunkTest.createLogicalBlockDistribution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChunkTest.printBlocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SplittingTheWork" />
       <extension name="coverage">
         <pattern>
@@ -197,7 +211,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.jrm.stw" />
       <option name="MAIN_CLASS_NAME" value="com.jrm.stw.ChunkTest" />
-      <option name="METHOD_NAME" value="createLogicalBlockDistribution" />
+      <option name="METHOD_NAME" value="printBlocks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -229,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChunkTest.printBlocks" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ChunkTest" />
         <item itemvalue="JUnit.ChunkTest.setBlocks" />
         <item itemvalue="JUnit.ChunkTest.createForest" />
-        <item itemvalue="JUnit.ChunkTest.createLogicalBlockDistribution" />
       </list>
     </recent_temporary>
   </component>
@@ -275,11 +289,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java</url>
-          <line>465</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java</url>
           <line>57</line>

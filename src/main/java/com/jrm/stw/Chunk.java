@@ -1,8 +1,6 @@
 package com.jrm.stw;
 
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.Serializable;
 import java.util.Random;
 
@@ -95,20 +93,26 @@ public class Chunk implements Serializable {
      */
     private void fillChunks() {
         switch (biome) {
+            case Forest:
+                createForest();
+                break;
+            case Plains:
+                createPlains();
+                break;
+            case Desert:
+                createDesert();
+                break;
+            case Void:
+                createVoid();
+                break;
             case Tundra:
                 createTundra();
                 break;
             case Taiga:
                 createTaiga();
                 break;
-            case Plains:
-                createPlains();
-                break;
             case Swamp:
                 createSwamp();
-                break;
-            case Forest:
-                createForest();
                 break;
             case Shrubland:
                 createShrubland();
@@ -121,12 +125,6 @@ public class Chunk implements Serializable {
                 break;
             case Savanna:
                 createSavanna();
-                break;
-            case Void:
-                createVoid();
-                break;
-            case Desert:
-                createDesert();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + biome);
@@ -249,7 +247,7 @@ public class Chunk implements Serializable {
                         } else if (h >= 30) {
                             type = BlockType.WATER;
                         } else if (h >= 20) {
-                            type = BlockType.DIRT;
+                            type = BlockType.SAND;
                         } else if (h >= 10) {
                             type = BlockType.STONE;
                         }

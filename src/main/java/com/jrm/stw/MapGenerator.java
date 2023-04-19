@@ -1,9 +1,6 @@
 package com.jrm.stw;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -28,7 +25,7 @@ public class MapGenerator {
 
 
     public MapGenerator() {
-        this(2, 2, 12345L);
+        this(10, 10, 12345L);
     }
 
 
@@ -159,7 +156,9 @@ public class MapGenerator {
                         for (int j = -1; j <= 1; j++) {
                             if (!landMass[x + j][y + i]) {
                                 count++;
-                            }}}
+                            }
+                        }
+                    }
                     //Change chances of an island forming
                     if (count > 7) {
                         //if the surrounding 8 tiles are water
@@ -177,7 +176,9 @@ public class MapGenerator {
                     //if the tile is already land set new array to the same
                 } else {
                     newLand[x][y] = true;
-                }}}
+                }
+            }
+        }
         landMass = newLand;
     }
 
@@ -249,6 +250,34 @@ public class MapGenerator {
                     }
                 }
             }
+        }
+        printBiomes();
+    }
+
+    private void printBiomes() {
+        try {
+            // create a new directory called "landmass"
+            File directory = new File("Biomes");
+            if (!directory.exists()) {
+                directory.mkdir();
+            }
+
+            // create a new file called "landMass.txt" in the "landmass" directory
+            File file = new File(directory, "biomes.txt");
+            FileWriter fw = new FileWriter(file);
+
+            // write the contents of the landMass array to the file
+            for (int y = 0; y < mapLength; y++) {
+                for (int x = 0; x < mapWidth; x++) {
+                    fw.write(biomes[x][y].ordinal() + " ");
+                }
+                fw.write("\n");
+            }
+
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
         }
     }
 
@@ -525,7 +554,7 @@ public class MapGenerator {
         ObjectMapper mapper = new ObjectMapper();
         // Write the JSON string to a file
         File file = new File(directory, fileName);
-        mapper.writeValue(file,blks);
+        mapper.writeValue(file, blks);
     }
 
 

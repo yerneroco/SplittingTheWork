@@ -6,6 +6,9 @@ from tkinter import filedialog
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+PLAINS = (57,71,41)
+FOREST = (23,37,32)
+DESERT = (98,60,14)
 
 
 # Set the dimensions of the window
@@ -25,20 +28,23 @@ def get_text_files(directory):
 # Load the data from the file
 def load_data(file_path):
     with open(file_path, 'r') as f:
-        data = [[float(x) for x in line.split()] for line in f]
+        data = [[int(x) for x in line.split()] for line in f]
     return data
 
 # Draw the squares for a given data and position
 def draw_squares(data, screen, start_row, start_col, max_rows, max_cols, square_size):
     for row in range(max_rows):
         for col in range(max_cols):
+            square_color = BLACK
             data_row = row + ((len(data) - max_rows) // 2)
             data_col = col + ((len(data[0]) - max_cols) // 2)
             if 0 <= data_row < len(data) and 0 <= data_col < len(data[0]):
-                #print('data'  + str(data[data_row][data_col]) +' '+str(data_row)  + ' '  + str(data_col) )
-                square_color = (data[data_row][data_col]*255,data[data_row][data_col]*255,data[data_row][data_col]*255)
-            else:
-                square_color = BLACK
+                if data[data_row][data_col] == 0:
+                    square_color = FOREST
+                elif data[data_row][data_col] == 1:
+                    square_color = PLAINS
+                elif data[data_row][data_col] == 2:
+                    square_color = DESERT
             square_rect = pygame.Rect(start_col + col * square_size, start_row + row * square_size, square_size, square_size)
             pygame.draw.rect(screen, square_color, square_rect)
 

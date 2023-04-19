@@ -9,8 +9,8 @@ BLUE = (0, 0, 255)
 
 
 # Set the dimensions of the window
-WINDOW_WIDTH = 200
-WINDOW_HEIGHT = 200
+WINDOW_WIDTH = 1000
+WINDOW_HEIGHT = 1000
 
 # Prompt the user to select a directory
 def get_directory():
