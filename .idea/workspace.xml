@@ -9,7 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c3929b5-4a7d-44d1-a440-8eda3ce7f82a" name="Changes" comment="chunks">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Chunk.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/jrm/stw/MapGenerator.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -209,7 +208,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/jrm/stw/Map.java</url>
-          <line>57</line>
+          <line>29</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -221,73 +220,73 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$MapTest.ic" NAME="MapTest Coverage Results" MODIFIED="1680650426104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_calculateUniversalLocation.ic" NAME="BlockTest.calculateUniversalLocation Coverage Results" MODIFIED="1679365832383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest.ic" NAME="ChunkTest Coverage Results" MODIFIED="1680829732955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalZ.ic" NAME="BlockTest.getUniversalZ Coverage Results" MODIFIED="1679359357463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_getBlocks.ic" NAME="ChunkTest.getBlocks Coverage Results" MODIFIED="1680053940832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalY.ic" NAME="BlockTest.getUniversalY Coverage Results" MODIFIED="1679359314863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalX.ic" NAME="BlockTest.getUniversalX Coverage Results" MODIFIED="1679359229651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_createLogicalBlockDistribution.ic" NAME="ChunkTest.createLogicalBlockDistribution Coverage Results" MODIFIED="1680053959396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$com_jrm_stw_in_SplittingTheWork.ic" NAME="com.jrm.stw in SplittingTheWork Coverage Results" MODIFIED="1679088737043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getChunkX.ic" NAME="BlockTest.getChunkX Coverage Results" MODIFIED="1679359217327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getChunkZ.ic" NAME="BlockTest.getChunkZ Coverage Results" MODIFIED="1679359222213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1680820409815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getType.ic" NAME="BlockTest.getType Coverage Results" MODIFIED="1679362965393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setX.ic" NAME="BlockTest.setX Coverage Results" MODIFIED="1679359708510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setY.ic" NAME="BlockTest.setY Coverage Results" MODIFIED="1679360065025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setZ.ic" NAME="BlockTest.setZ Coverage Results" MODIFIED="1679359621764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_printBlocks.ic" NAME="ChunkTest.printBlocks Coverage Results" MODIFIED="1680677889398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_createLogicalBlockDistribution.ic" NAME="ChunkTest.createLogicalBlockDistribution Coverage Results" MODIFIED="1680053959396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setType.ic" NAME="BlockTest.setType Coverage Results" MODIFIED="1679363445660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalZ.ic" NAME="BlockTest.getUniversalZ Coverage Results" MODIFIED="1679359357463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest.ic" NAME="BlockTest Coverage Results" MODIFIED="1680820409815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setZ.ic" NAME="BlockTest.setZ Coverage Results" MODIFIED="1679359621764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setY.ic" NAME="BlockTest.setY Coverage Results" MODIFIED="1679360065025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalX.ic" NAME="BlockTest.getUniversalX Coverage Results" MODIFIED="1679359229651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getType.ic" NAME="BlockTest.getType Coverage Results" MODIFIED="1679362965393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getUniversalY.ic" NAME="BlockTest.getUniversalY Coverage Results" MODIFIED="1679359314863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setX.ic" NAME="BlockTest.setX Coverage Results" MODIFIED="1679359708510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$ChunkTest_getBlocks.ic" NAME="ChunkTest.getBlocks Coverage Results" MODIFIED="1680053940832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getChunkX.ic" NAME="BlockTest.getChunkX Coverage Results" MODIFIED="1679359217327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setChunkX.ic" NAME="BlockTest.setChunkX Coverage Results" MODIFIED="1679362918343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setChunkZ.ic" NAME="BlockTest.setChunkZ Coverage Results" MODIFIED="1679362927367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getX.ic" NAME="BlockTest.getX Coverage Results" MODIFIED="1679359176701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$MapTest.ic" NAME="MapTest Coverage Results" MODIFIED="1680650426104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_setChunkZ.ic" NAME="BlockTest.setChunkZ Coverage Results" MODIFIED="1679362927367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getY.ic" NAME="BlockTest.getY Coverage Results" MODIFIED="1679359199147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/SplittingTheWork$com_jrm_stw_in_SplittingTheWork.ic" NAME="com.jrm.stw in SplittingTheWork Coverage Results" MODIFIED="1679088737043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jrm.stw.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getZ.ic" NAME="BlockTest.getZ Coverage Results" MODIFIED="1679359212994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getX.ic" NAME="BlockTest.getX Coverage Results" MODIFIED="1679359176701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.jrm.stw.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_calculateUniversalLocation.ic" NAME="BlockTest.calculateUniversalLocation Coverage Results" MODIFIED="1679365832383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SplittingTheWork$BlockTest_getChunkZ.ic" NAME="BlockTest.getChunkZ Coverage Results" MODIFIED="1679359222213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.jrm.stw.*</FILTER>
     </SUITE>
   </component>
